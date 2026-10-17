@@ -126,7 +126,7 @@
   padding: 0 var(--button-pad-x);
   font-family: var(--font-sans);
   font-size: var(--fs-button);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
   line-height: var(--lh-none);
   letter-spacing: var(--ls-button);
   white-space: nowrap;
