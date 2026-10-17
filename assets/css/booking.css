@@ -1,0 +1,681 @@
+/* запись: фото и карточка с формой */
+.booking__grid {
+  row-gap: var(--grid-gap);
+}
+
+.booking__photo {
+  grid-column: 1 / -1;
+  aspect-ratio: var(--ratio-wide);
+  border-radius: var(--radius-lg);
+}
+
+.booking__img {
+  position: absolute;
+  inset: 0;
+}
+
+.booking__card {
+  grid-column: 1 / -1;
+  padding: var(--space-6) var(--space-5);
+}
+
+.booking__label {
+  margin-bottom: var(--space-5);
+}
+
+.booking__title {
+  margin-bottom: var(--space-5);
+}
+
+.booking__text {
+  max-width: var(--measure-sub);
+  margin-bottom: var(--space-7);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .booking__card {
+    padding: var(--space-7);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* сплит пополам по оси C */
+  .booking__photo {
+    grid-column: 1 / 7;
+    align-self: stretch;
+    aspect-ratio: auto;
+    min-height: var(--size-band-min);
+  }
+
+  .booking__card {
+    grid-column: 7 / -1;
+    padding: var(--space-7);
+  }
+}
+
+@media (min-width: 1280px) {
+  .booking__card {
+    padding: var(--space-8);
+  }
+}
+
+/* форма */
+.form__grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form__label {
+  color: var(--color-text-muted);
+  font-size: var(--fs-label);
+  line-height: var(--lh-none);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.form__input {
+  width: 100%;
+  height: var(--size-input);
+  padding: 0 var(--space-4);
+  color: var(--color-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-title);
+  border: var(--border-w) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-3);
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.form__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.form__input:focus,
+.form__input:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.form__input--select {
+  padding-right: var(--space-8);
+  background-image: var(--icon-chevron);
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  background-size: var(--size-icon);
+  cursor: pointer;
+}
+
+.form__input--textarea {
+  height: auto;
+  min-height: var(--size-textarea);
+  padding: var(--space-4);
+  line-height: var(--lh-body);
+  resize: vertical;
+}
+
+.form__error {
+  color: var(--color-error);
+  font-size: var(--fs-small);
+  line-height: var(--lh-title);
+}
+
+.form__error:empty {
+  display: none;
+}
+
+/* кастомный чекбокс согласия */
+.form__field--check {
+  margin-top: var(--space-6);
+}
+
+.form__check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.form__checkbox {
+  flex: none;
+  width: var(--size-check);
+  height: var(--size-check);
+  margin: 0;
+  border: var(--border-w) solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-3);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.form__field--error .form__input,
+.form__field--error .form__checkbox {
+  border-color: var(--color-error);
+}
+
+.form__checkbox:checked {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  background-image: var(--icon-check);
+}
+
+.form__link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line-strong);
+  text-underline-offset: var(--underline-offset);
+  transition: text-decoration-color var(--dur-fast) var(--ease-out);
+}
+
+.form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.form__submit {
+  width: 100%;
+}
+
+.form__note {
+  color: var(--color-text-muted);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.form__alert {
+  display: none;
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  font-size: var(--fs-small);
+  border: var(--border-w) solid var(--color-error);
+  border-radius: var(--radius-md);
+}
+
+.form__success {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-block: var(--space-6);
+  border-top: var(--border-w) solid var(--color-line);
+}
+
+.form__success-title {
+  color: var(--color-success);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+  text-transform: uppercase;
+}
+
+.form__success-title:focus {
+  outline: none;
+}
+
+.form__success-text {
+  color: var(--color-text-muted);
+}
+
+.form__again {
+  margin-top: var(--space-3);
+}
+
+.form--error .form__alert {
+  display: block;
+}
+
+.form--loading .form__submit {
+  cursor: progress;
+}
+
+.form--success .form__fields {
+  display: none;
+}
+
+.form--success .form__success {
+  display: flex;
+}
+
+@media (hover: hover) {
+  .form__input:hover:not(:focus) {
+    border-color: var(--color-line-strong);
+  }
+
+  .form__link:hover {
+    text-decoration-color: var(--color-accent);
+  }
+}
+
+@media (min-width: 768px) {
+  .form__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-4);
+  }
+
+  .form__field--full {
+    grid-column: 1 / -1;
+  }
+
+  .form__actions {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .form__submit {
+    width: auto;
+  }
+}
+
+/* список услуг (nice-select2): библиотека прячет select (.hidden-select) и рисует div.nice-select
+   с классами select'а — фон, рамка и высота берутся от .form__input; классы задаёт библиотека, поэтому они не в БЭМ */
+.hidden-select {
+  display: none;
+}
+
+.nice-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-image: none;
+  user-select: none;
+}
+
+.nice-select:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+/* шеврон — псевдоэлемент, чтобы поворачивать его при открытии */
+.nice-select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: var(--space-4);
+  width: var(--size-icon);
+  height: var(--size-icon);
+  background: var(--icon-chevron) center / contain no-repeat;
+  translate: 0 -50%;
+  transition: rotate var(--dur-base) var(--ease-out);
+}
+
+.nice-select.open::after {
+  rotate: var(--rotate-flip);
+}
+
+.nice-select .current {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nice-select-dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  right: 0;
+  z-index: var(--z-raised);
+  padding: var(--space-2);
+  border: var(--border-w) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-3);
+  box-shadow: var(--shadow-float);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 calc(var(--dropdown-shift) * -1);
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    translate var(--dur-fast) var(--ease-out),
+    visibility var(--dur-fast);
+}
+
+.nice-select.open .nice-select-dropdown {
+  opacity: 1;
+  visibility: visible;
+  translate: 0 0;
+}
+
+.nice-select .list {
+  max-height: var(--size-dropdown-max);
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+}
+
+.nice-select .option {
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-title);
+  border-radius: var(--radius-sm);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.nice-select .option:hover,
+.nice-select .option.focus {
+  color: var(--color-text);
+  background-color: var(--color-surface-2);
+}
+
+.nice-select .option.selected {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+}
+
+.nice-select .option.disabled {
+  opacity: var(--opacity-disabled);
+  cursor: default;
+}
+
+/* контакты: заглушка карты */
+.contacts__map {
+  justify-content: flex-end;
+  min-height: var(--size-map-min);
+  padding: 0;
+  overflow: hidden;
+}
+
+.contacts__grid-lines {
+  position: absolute;
+  inset: 0;
+  background: var(--pattern-map);
+  -webkit-mask-image: var(--mask-radial);
+  mask-image: var(--mask-radial);
+}
+
+.contacts__glow {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-glow);
+  background-position: var(--map-glow-pos);
+  background-repeat: no-repeat;
+}
+
+.contacts__marker {
+  position: absolute;
+  top: var(--map-marker-y);
+  left: var(--map-marker-x);
+  width: var(--size-marker);
+  height: var(--size-marker);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-ring), var(--shadow-glow);
+  transform: translate(-50%, -50%);
+}
+
+/* едва заметная пульсация вокруг маркера */
+.contacts__marker::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--border-w) solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  opacity: 0;
+  animation: contacts-pulse var(--dur-pulse) var(--ease-out) infinite;
+}
+
+@keyframes contacts-pulse {
+  0% {
+    opacity: var(--opacity-pulse);
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(var(--scale-pulse));
+  }
+}
+
+.contacts__map-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.contacts__map-address {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+  text-transform: uppercase;
+}
+
+.contacts__list {
+  display: grid;
+  gap: var(--space-6) var(--grid-gap);
+  margin-top: var(--space-8);
+}
+
+/* мобилка: ячейки по центру; с 768px — выключка влево */
+.contacts__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding-top: var(--space-5);
+  text-align: center;
+  border-top: var(--border-w) solid var(--color-line-strong);
+}
+
+.contacts__label {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.contacts__value {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-title);
+}
+
+.contacts__meta {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+.contacts__link {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.contacts__messengers {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.contacts__dot {
+  color: var(--color-text-muted);
+}
+
+@media (hover: hover) {
+  .contacts__link:hover {
+    color: var(--color-accent-hover);
+  }
+}
+
+@media (pointer: coarse) {
+  .contacts__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-touch);
+  }
+}
+
+@media (min-width: 768px) {
+  .contacts__map-info {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: var(--space-7);
+  }
+
+  .contacts__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contacts__cell {
+    align-items: flex-start;
+    text-align: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contacts__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* попап записи (<dialog>): появление и закрытие — transition + @starting-style;
+   мобилка — bottom sheet снизу, с 768 — карточка по центру */
+.modal {
+  width: 100%;
+  max-width: none;
+  max-height: var(--size-sheet-max);
+  margin: auto 0 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: var(--border-w) solid var(--color-line);
+  border-bottom: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  translate: 0 100%;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    translate var(--dur-base) var(--ease-out),
+    overlay var(--dur-base) allow-discrete,
+    display var(--dur-base) allow-discrete;
+}
+
+.modal[open] {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@starting-style {
+  .modal[open] {
+    opacity: 0;
+    translate: 0 100%;
+  }
+}
+
+.modal::backdrop {
+  background-color: var(--color-transparent);
+  backdrop-filter: blur(0);
+  transition:
+    background-color var(--dur-base) var(--ease-out),
+    backdrop-filter var(--dur-base) var(--ease-out),
+    overlay var(--dur-base) allow-discrete,
+    display var(--dur-base) allow-discrete;
+}
+
+.modal[open]::backdrop {
+  background-color: var(--color-modal-backdrop);
+  backdrop-filter: blur(var(--blur-backdrop));
+}
+
+@starting-style {
+  .modal[open]::backdrop {
+    background-color: var(--color-transparent);
+    backdrop-filter: blur(0);
+  }
+}
+
+.modal__box {
+  position: relative;
+  padding: var(--space-6) var(--space-5) calc(var(--space-6) + env(safe-area-inset-bottom));
+}
+
+.modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.modal__label {
+  margin-bottom: var(--space-4);
+}
+
+.modal__title {
+  padding-right: var(--size-arrow);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+  text-transform: uppercase;
+}
+
+.modal__text {
+  max-width: var(--measure-sub);
+  margin: var(--space-3) 0 var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: min(100% - 2 * var(--page-gutter), var(--size-modal));
+    max-height: calc(100dvh - 2 * var(--page-gutter));
+    margin: auto;
+    border-bottom: var(--border-w) solid var(--color-line);
+    border-radius: var(--radius-lg);
+    translate: 0 var(--modal-shift);
+  }
+
+  @starting-style {
+    .modal[open] {
+      translate: 0 var(--modal-shift);
+    }
+  }
+
+  .modal__box {
+    padding: var(--space-7);
+  }
+
+  .modal__close {
+    top: var(--space-5);
+    right: var(--space-5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal,
+  .modal::backdrop,
+  .nice-select::after,
+  .nice-select-dropdown {
+    transition: none;
+  }
+}

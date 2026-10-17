@@ -1,0 +1,343 @@
+/* дизайн-токены: единственное место с «сырыми» значениями, в секциях — только смысловые токены */
+
+:root {
+  /* базовая палитра */
+  --graphite-1000: #070708;
+  --graphite-950:  #0a0a0b;
+  --graphite-900:  #121214;
+  --graphite-850:  #19191c;
+  --graphite-800:  #222226;
+  --graphite-600:  #3a3a40;
+  --gray-500:      #5e5e64;
+  --gray-400:      #9a9aa0;
+  --gray-100:      #f2f2f3;
+  --silver-200:    #e6e7ea;
+  --silver-300:    #c9cacf;
+  --silver-500:    #8e8f96;
+  --red-500:       #e5484d;
+  --white-a06:     rgba(255, 255, 255, .06);
+  --white-a10:     rgba(255, 255, 255, .10);
+  --white-a05:     rgba(255, 255, 255, .05);
+  --white-a18:     rgba(255, 255, 255, .18);
+  --white-a85:     rgba(255, 255, 255, .85);
+  --graphite-a55:  rgba(10, 10, 11, .55);
+  --graphite-a70:  rgba(10, 10, 11, .70);
+  --graphite-a85:  rgba(7, 7, 8, .85);
+  --graphite-a94:  rgba(7, 7, 8, .94);
+  --black-a18:     rgba(0, 0, 0, .18);
+  --black-a45:     rgba(0, 0, 0, .45);
+  --black-a50:     rgba(0, 0, 0, .5);
+  --silver-glow:   rgba(220, 222, 230, .22);
+
+  /* смысловые токены */
+  --color-bg:            var(--graphite-950);
+  --color-bg-deep:       var(--graphite-1000);
+  --color-surface:       var(--graphite-900);   /* карточки */
+  --color-surface-2:     var(--graphite-850);   /* ховер/активные строки */
+  --color-surface-3:     var(--graphite-800);   /* инпуты, чипы */
+  --color-text:          var(--gray-100);
+  --color-text-muted:    var(--gray-400);       /* описания */
+  --color-text-dim:      var(--gray-500);       /* только крупный текст ≥ 24px */
+  --color-line:          var(--white-a10);      /* разделители, рамки */
+  --color-line-strong:   var(--white-a18);
+  --color-highlight:     var(--white-a06);      /* inset-блик сверху у карточек */
+  --color-accent:        var(--silver-300);
+  --color-accent-hover:  var(--silver-200);
+  --color-on-accent:     var(--graphite-950);   /* текст на серебре */
+  --color-error:         var(--red-500);
+  --color-success:       var(--silver-200);
+  --color-glass:         var(--graphite-a55);   /* стеклянная плашка */
+  --color-glass-light:   var(--white-a05);      /* светлое стекло: плашки статистики */
+  --color-glass-dark:    var(--graphite-a70);   /* затемнённое стекло: карточки преимуществ */
+  --color-backdrop:      var(--graphite-a94);   /* фон лайтбокса */
+  --color-modal-backdrop: var(--graphite-a70);  /* подложка попапа записи */
+  --color-overlay:       var(--graphite-a55);   /* приглушение фото под заголовком */
+  --color-transparent:   transparent;
+
+  /* глянцевое серебро: плавный переход от светлого верха к серебру внизу, без полос */
+  --gradient-silver: linear-gradient(180deg, #fdfdfd 0%, #ebecee 45%, #d3d4d8 100%);
+  --gradient-glow:   radial-gradient(60% 50% at 50% 50%, rgba(230, 232, 240, .18) 0%, transparent 70%);
+  --gradient-shade-top:    linear-gradient(var(--graphite-a55), transparent);
+  --gradient-shade-bottom: linear-gradient(180deg, transparent 30%, var(--graphite-a85) 100%);
+  --filter-mono: grayscale(1) contrast(1.05) brightness(.95);
+
+  /* маски и узоры */
+  --mask-fade-x: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  /* прогрессивный блюр шапки: чем сильнее блюр, тем короче маска */
+  --mask-blur-1: linear-gradient(#000 70%, transparent 100%);
+  --mask-blur-2: linear-gradient(#000 55%, transparent 85%);
+  --mask-blur-3: linear-gradient(#000 40%, transparent 70%);
+  --mask-blur-4: linear-gradient(#000 25%, transparent 55%);
+  --mask-blur-5: linear-gradient(#000 10%, transparent 40%);
+  --mask-blur-6: linear-gradient(#000 0%, transparent 25%);
+  --mask-blur-mobile: linear-gradient(#000 45%, transparent 100%);
+  --mask-radial: radial-gradient(70% 80% at 60% 45%, #000 0%, transparent 80%);
+  --pattern-tread: repeating-linear-gradient(90deg, var(--color-line-strong) 0 1px, transparent 1px 8px);
+  --pattern-map:
+    repeating-linear-gradient(0deg, var(--color-line) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, var(--color-line) 0 1px, transparent 1px 48px);
+  --map-glow-pos: 10% -5%;
+  --map-marker-x: 60%;   /* маркер в центре радиальной маски сетки */
+  --map-marker-y: 45%;
+
+  /* иконки для форм: data-URI с зашитым цветом, поэтому живут в токенах */
+  --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23c9cacf' stroke-width='1.5'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");
+  --icon-check:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230a0a0b' stroke-width='2'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7'/%3E%3C/svg%3E");
+
+  /* шрифты */
+  --font-sans: "Onest", system-ui, sans-serif;
+
+  /* вордмарк подгоняется под ширину контейнера через cqi (контейнер — обёртка вордмарка) */
+  --fs-wordmark:       clamp(64px, calc(100cqi / 5.08), 480px);
+  --fs-wordmark-hero:  calc(100cqi / 5.08);  /* hero без JS: одна строка по ширине контейнера; hero.js подгоняет точно по контуру букв */
+  --fs-h1:       clamp(40px, 6vw, 104px);
+  --fs-h2:       clamp(26px, 8vw, 32px);      /* до 480px: на 320 длинные слова («дополнительная») должны влезать */
+  --fs-h3:       clamp(20px, 1.8vw, 30px);
+  --fs-h4:       clamp(18px, 1.4vw, 24px);    /* заголовки в узких ячейках */
+  --fs-stat:     clamp(32px, 9vw, 64px);   /* плашка в половину ширины: «2 500+» без переноса от 320px */
+  --fs-lead:     clamp(18px, 1.5vw, 22px);
+  --fs-menu:     clamp(32px, 8vw, 56px);
+  --fs-num:      clamp(32px, 3.4vw, 56px);    /* номера этапов */
+  --fs-index:    clamp(24px, 2vw, 32px);      /* индексы карточек (тусклые — только ≥ 24px) */
+  --fs-logo:     16px;
+  --fs-nav:      15px;                        /* пункты меню в шапке (десктоп) */
+  --fs-body:     16px;
+  --fs-small:    14px;
+  --fs-label:    12px;
+  /* подписи статистики на мобилке: самая длинная строка «гарантия на керамическое» (≈15.2em)
+     помещается в плашку в половину ширины — подписи в 2 строки от 360px */
+  --fs-stat-caption: clamp(9px, calc(3.2vw - 2.6px), 12px);
+  /* плашка на фото в «Преимуществах»: фраза (≈25em) в 1 строку на мобилке от 320px, с 446px — 14px */
+  --fs-glass-caption: clamp(9px, calc(4vw - 3.8px), 14px);
+  --fs-section-label: 18px; /* лейблы разделов: высота капса ≈ иконке-прицелу */
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;   /* кнопки */
+
+  --lh-tight: .95;
+  --lh-heading: 1.05;
+  --lh-title: 1.2;
+  --lh-body: 1.55;
+  --lh-wordmark: .8;
+  --lh-none: 1;
+  --wordmark-crop: .62em;     /* видимая высота вордмарка в футере (~85% букв) */
+
+  --ls-heading: -0.02em;
+  --ls-wordmark: -0.04em;
+  --ls-label: .08em;
+  --ls-stat-caption: 0;      /* подписи статистики на мобилке */
+  --ls-logo: .15em;
+
+  /* поля у строк заголовков-масок: чтобы «Й» и выносные элементы не обрезались */
+  --mask-pad: .12em;
+  --mask-hide: 110%;         /* строка или буква целиком под маской */
+
+  /* отступы */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+  --space-12: 200px;
+  --space-stat: calc(var(--space-4) / 1.2);    /* цифра → подпись в плашках статистики */
+  --space-author: calc(var(--space-5) / 1.2);  /* отступ подписи отзыва на мобилке */
+  --section-pad: clamp(96px, 12vw, 180px);
+
+  /* сетка и раскладка */
+  --container-max: 2400px;   /* защита от ультрашироких экранов: на 1920 контейнер почти во всю ширину */
+  --page-gutter: clamp(12px, calc(6.4px + 0.7vw), 20px);  /* поле от края экрана до контента */
+  --grid-gap: 12px;
+  --header-h: 84px;   /* мобилка: бургер 48px + поля по 18px сверху и снизу */
+  --header-blur-h: calc(var(--header-h) * 2);
+  --scroll-offset: calc(var(--header-h) + var(--space-4));
+  /* шаг сетки = колонка + промежуток; 100cqi — ширина .container (container-type в base.css) */
+  --col-step: calc((100cqi + var(--grid-gap)) / 12);
+  --heading-shift: var(--col-step);  /* «лесенка»: ровно на одну колонку */
+  --row-bleed: var(--space-3);       /* подсветка строк прайса/FAQ шире текста, не больше минимального --page-gutter */
+  /* ширина абзацев: на мобилке — на всю ширину контейнера, ограничения с 768px */
+  --measure-sub: none;
+  --measure-text: calc(var(--col-step) * 4 - var(--grid-gap)); /* абзацы под заголовками секций (@1024+): 4 колонки, 4–7 */
+  --measure-body: none;
+  --measure-short: none;
+  --slide-gallery: 82%;      /* ширина карточки галереи на мобилке */
+  --slide-review: 86%;       /* ширина отзыва на мобилке */
+  --slide-review-md: 46%;    /* ширина отзыва на планшете */
+
+  /* пропорции */
+  --ratio-wide: 16 / 10;            /* превью услуг и фото записи на мобилке */
+  --ratio-preview: 4 / 3;           /* превью услуг с планшета */
+  --ratio-band-md: 16 / 9;          /* полоса-фото этапов, планшет */
+  --ratio-band-lg: 12 / 5;          /* полоса-фото этапов, десктоп */
+  --ratio-gallery: 1200 / 896;      /* пропорции фото галереи (реальные файлы gallery-01…06) */
+
+  /* размеры элементов */
+  --border-w: 1px;
+  --size-hairline: 1px;
+  --focus-w: 2px;
+  --focus-offset: 3px;
+  --size-touch: 44px;
+  --size-arrow: 48px;
+  --size-arrow-sm: 40px;
+  --size-icon: 20px;
+  --size-icon-sm: 14px;
+  --size-icon-xs: 20px;  /* иконка-прицел в лейблах */
+  --size-input: 52px;
+  --size-textarea: 128px;
+  --size-check: 20px;
+  --size-thumb: 144px;   /* миниатюры этапов на планшете */
+  --size-handle: 48px;
+  --size-marker: 14px;
+  --size-scrollbar: 8px;
+  --size-review-min: 360px;
+  --size-meta-min: 2lh;      /* подпись отзыва на мобилке всегда в две строки */
+  --size-band-min: clamp(440px, 42vw, 680px);
+  --size-map-min: clamp(320px, 30vw, 440px);
+  --size-hero-min: 640px;
+  --size-modal: 640px;               /* ширина попапа записи */
+  --size-dropdown-max: 280px;        /* высота списка услуг, дальше — прокрутка */
+  --size-sheet-max: 92dvh;           /* высота bottom sheet на мобилке */
+  --viewport-h: 100svh;      /* высота экрана; на тач-устройствах hero.js фиксирует её в px, чтобы панель браузера не меняла hero */
+  --hero-h: max(var(--viewport-h), var(--size-hero-min));
+  --hero-scroll: var(--viewport-h);  /* сколько прокрутки занимает «включение фар» (hero закреплён) */
+  --hero-media-ratio: 1924 / 996;   /* пропорции фото и кадров секвенции */
+  --hero-media-span: 1.8;    /* максимальная ширина фото в ширинах экрана; на мобилке шире экрана — авто крупнее */
+  --hero-media-crop: 0;      /* доля кадра, срезанная снизу (отражение под авто); верх кадра не трогаем — растворение лежит на самом фото */
+  --hero-fade-end: 35%;      /* длина зоны растворения фото сверху (% высоты фото) */
+  --hero-bar-gap: calc(var(--space-5) * 1.5);      /* мобилка: абзац → кнопка */
+  --hero-media-gap: calc(var(--hero-bar-gap) * 2);  /* мобилка: кнопка → верх фото */
+  --hero-fade-side: 15%;     /* растворение фото по бокам: края кадра не видны, когда фото уже экрана (авто в центральной половине кадра — не задевает) */
+  --hero-fade-bottom: 15%;   /* растворение фото снизу; на десктопе 0 — авто стоит на нижней границе */
+  --mask-solid: #000;
+  --tread-h: 28px;
+  --tread-pitch-min: 10px;     /* минимальный шаг шашки протектора */
+  --tread-pitch-max: 16px;     /* максимальный шаг шашки */
+  --tread-block: 3px;          /* толщина шашки (остальное в шаге — канавка) */
+  --tread-center: 2px;         /* центральная канавка */
+  --tread-slant: 7px;          /* наклон шашки (сдвиг «ёлочки») */
+  --tread-tile: 960px;         /* ширина повторяющегося фрагмента рисунка */
+  /* кнопки */
+  --size-button: 52px;
+  --button-pad-x: 28px;
+  --fs-button: clamp(14px, calc(12.8px + .25vw), 17px);
+  --ls-button: -.01em;
+  --chip-pad-y: 6px;
+  --chip-pad-x: 12px;
+  --card-pad: var(--space-2);
+
+  /* скругления */
+  --radius-none: 0;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-pill: 999px;
+
+  /* тени и эффекты */
+  --shadow-card:  0 24px 60px var(--black-a45), inset 0 1px 0 var(--color-highlight);
+  --shadow-float: 0 12px 32px var(--black-a50);
+  --shadow-glow:  0 0 40px var(--silver-glow);
+  --shadow-gloss: inset 0 1px 0 var(--white-a85), inset 0 -1px 0 var(--black-a18);   /* блик-кромка глянцевых кнопок */
+  --shadow-ring:  0 0 0 8px var(--white-a10);
+  --blur-glass:   16px;
+  --blur-backdrop: 6px;   /* подложка попапа записи */
+  --blur-mobile:  12px;
+  --blur-1: 1px;
+  --blur-2: 2px;
+  --blur-3: 4px;
+  --blur-4: 8px;
+  --blur-5: 16px;
+  --blur-6: 28px;
+
+  /* анимации */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --dur-fast: 200ms;
+  --dur-base: 400ms;
+  --dur-slow: 800ms;
+  --dur-reveal: 900ms;
+  --stagger: 40ms;           /* буквы вордмарка */
+  --stagger-reveal: 120ms;   /* шаг data-reveal-delay */
+  --reveal-shift: 24px;
+  --shift-icon: 2px;
+  --shift-card: 3px;
+  --shift-preview: 16px;
+  --shift-skip: -200%;       /* skip-link спрятан над экраном до фокуса */
+  --scale-hover: 1.04;
+  --scale-hero: 1.08;
+  --scale-pulse: 3;
+  --scale-dialog: .97;
+  --scale-press: .97;        /* кнопка «вдавливается» при нажатии */
+  --rotate-close: 90deg;     /* поворот крестиков закрытия на ховере */
+  --rotate-flip: 180deg;     /* шеврон открытого списка */
+  --rotate-open: 45deg;      /* плюс открытого пункта FAQ становится крестиком */
+  --dropdown-shift: 8px;     /* список услуг выезжает сверху на эту величину */
+  --modal-shift: 24px;       /* попап записи выезжает снизу на эту величину */
+  --opacity-disabled: .4;
+  --opacity-pulse: .6;
+  --underline-offset: .2em;
+  --dur-pulse: 2400ms;
+
+  /* z-index */
+  --z-below: -1;
+  --z-base: 1;
+  --z-raised: 2;
+  --z-header: 100;
+  --z-menu: 200;
+  --z-dialog: 300;
+  --z-skip: 400;
+}
+
+@media (min-width: 480px) {
+  :root {
+    --fs-h2: clamp(32px, 4.6vw, 76px);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --measure-sub: 46ch;
+    --measure-body: 62ch;       /* ответы FAQ, абзац «О студии» до 1024 */
+    --measure-short: 36ch;
+    --grid-gap: 20px;
+    --hero-media-span: 1.4;
+    --hero-media-crop: .12;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 100px;
+    --fs-logo: 20px;
+    --hero-media-span: .8;
+    --hero-media-crop: .16;
+    --hero-fade-bottom: 0%;
+  }
+}
+
+/* статистика в 4 колонки (advantages.css) — цифры в полный размер */
+@media (min-width: 1100px) {
+  :root {
+    --fs-stat: clamp(48px, 6vw, 96px);
+  }
+}
+
+/* уменьшенное движение: все длительности — ноль, контент появляется сразу */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --dur-reveal: 0ms;
+    --stagger: 0ms;
+    --stagger-reveal: 0ms;
+    --dur-pulse: 0ms;
+    --reveal-shift: 0px;
+  }
+}

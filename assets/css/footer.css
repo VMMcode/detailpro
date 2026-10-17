@@ -1,0 +1,229 @@
+/* футер */
+.footer {
+  padding-top: var(--space-9);
+  overflow: hidden;
+  border-top: var(--border-w) solid var(--color-line);
+  background-color: var(--color-bg-deep);
+}
+
+/* мобилка: весь футер по центру; с 768px — выключка влево по сетке */
+.footer__inner {
+  text-align: center;
+}
+
+.footer__cols {
+  row-gap: var(--space-7);
+}
+
+.footer__col {
+  grid-column: 1 / -1;
+}
+
+/* колонка «запись» — CTA: крупный телефон и кнопка */
+.footer__col--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__title {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.footer__cta-phone {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--size-touch);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-heading);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__cta-button {
+  align-self: stretch;
+  margin-top: var(--space-4);
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* мобилка: навигация в 2 колонки, чтобы футер не тянулся */
+.footer__list--split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+  justify-items: center;
+}
+
+.footer__link {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__text {
+  color: var(--color-text-muted);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-9);
+  padding-block: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  border-top: var(--border-w) solid var(--color-line);
+}
+
+.footer__policy {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+/* гигантский вордмарк, обрезанный снизу */
+.footer__mark {
+  container-type: inline-size;
+  margin-top: var(--space-6);
+}
+
+.footer__wordmark {
+  height: var(--wordmark-crop);
+  overflow: hidden;
+  font-size: var(--fs-wordmark);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-wordmark);
+  letter-spacing: var(--ls-wordmark);
+  white-space: nowrap;
+  user-select: none;
+}
+
+@media (hover: hover) {
+  .footer__link:hover,
+  .footer__cta-phone:hover,
+  .footer__policy:hover {
+    color: var(--color-accent-hover);
+  }
+}
+
+@media (pointer: coarse) {
+  .footer__link,
+  .footer__policy {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-touch);
+  }
+
+  .footer__list {
+    gap: 0;
+  }
+}
+
+/* планшет: сетка 2×2 (навигация | услуги / контакты | запись);
+   ряды заданы явно: «запись» стоит первой в DOM ради скринридера */
+@media (min-width: 768px) {
+  .footer__inner {
+    text-align: start;
+  }
+
+  .footer__col--cta {
+    grid-row: 2;
+    grid-column: 7 / -1;
+    align-items: flex-start;
+  }
+
+  .footer__col--nav {
+    grid-row: 1;
+    grid-column: 1 / 7;
+  }
+
+  .footer__col--services {
+    grid-row: 1;
+    grid-column: 7 / -1;
+  }
+
+  .footer__col--contacts {
+    grid-row: 2;
+    grid-column: 1 / 7;
+  }
+
+  .footer__cta-button {
+    align-self: flex-start;
+  }
+
+  .footer__list {
+    align-items: stretch;
+  }
+
+  .footer__list--split {
+    justify-items: stretch;
+  }
+
+  .footer__bottom {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    align-items: baseline;
+  }
+
+  .footer__copy {
+    grid-column: 1 / 7;
+  }
+
+  .footer__policy {
+    grid-column: 7 / -1;
+    justify-self: start;
+  }
+
+  .footer__legal {
+    grid-column: 1 / 7;
+  }
+}
+
+/* десктоп: 4 колонки по 3 (1 / 4 / 7 / 10); нижняя строка на тех же осях —
+   копирайт 1–6 | политика с оси C | реквизиты с колонки 10, выключка влево */
+@media (min-width: 1024px) {
+  .footer__col--cta,
+  .footer__col--nav,
+  .footer__col--services,
+  .footer__col--contacts {
+    grid-row: 1;
+  }
+
+  .footer__col--cta {
+    grid-column: 10 / -1;
+  }
+
+  .footer__col--nav {
+    grid-column: 1 / 4;
+  }
+
+  .footer__col--services {
+    grid-column: 4 / 7;
+  }
+
+  .footer__col--contacts {
+    grid-column: 7 / 10;
+  }
+
+  .footer__list--split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer__policy {
+    grid-column: 7 / 10;
+  }
+
+  .footer__legal {
+    grid-column: 10 / -1;
+  }
+}

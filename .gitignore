@@ -1,0 +1,7 @@
+CLAUDE.md
+docs/
+screens/
+.DS_Store
+Thumbs.db
+*.zip
+.vscode/

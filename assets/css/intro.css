@@ -1,0 +1,42 @@
+/* вступление «о студии» */
+.about__inner {
+  row-gap: var(--space-5);
+}
+
+.about__body {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.about__text {
+  max-width: var(--measure-body);
+  color: var(--color-text-muted);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-body);
+}
+
+@media (min-width: 768px) {
+  /* абзац выровнен по сдвинутой строке «лесенки» */
+  .about__text {
+    padding-left: var(--heading-shift);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about__body {
+    grid-column: 3 / -1;
+    gap: var(--space-8);
+  }
+
+  /* заголовок — колонки 3–10: так длинная фраза переносится и «лесенка» читается */
+  .about__title {
+    max-width: calc(var(--col-step) * 8 - var(--grid-gap));
+  }
+
+  /* абзац: колонки 4–11 (8 колонок), max-width включает padding-left (сдвиг лесенки) */
+  .about__text {
+    max-width: calc(var(--heading-shift) + var(--col-step) * 8 - var(--grid-gap));
+  }
+}

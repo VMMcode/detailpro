@@ -1,0 +1,223 @@
+/* преимущества: одна сетка — стеклянные плашки статистики (строка 1) и карточки (строки 2–3) на фоне фото.
+   мобилка — 2 колонки: статы 2×2, карточки на всю ширину; статы и карточки — subgrid по обеим осям,
+   поэтому колонки, промежутки и высота строк общие, все строки одной высоты (1fr) */
+.advantages__grid {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: var(--grid-gap);
+}
+
+/* фото — фон всего контейнера с плашками: видно в зазорах и сквозь стекло;
+   на мобилке фото нет (display: none — lazy-картинка не загружается), блюр включается с 768 */
+.advantages__band {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-below);
+  isolation: isolate;
+  display: none;
+  border-radius: var(--radius-lg);
+}
+
+.advantages__band-img {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-below);
+}
+
+.advantages__glow {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-below);
+  background: var(--gradient-glow);
+  mix-blend-mode: screen;
+}
+
+.advantages__shade {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-below);
+  background: var(--gradient-shade-bottom);
+}
+
+/* сколько строк занимает каждый список, зависит от числа плашек:
+   статы 4 → 2 строки; карточки 6 + фото → 7 строк */
+.advantages__stats,
+.advantages__list {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  gap: var(--grid-gap);
+}
+
+.advantages__stats {
+  grid-row: span 2;
+}
+
+/* статистика: весь текст цветом цифр — приглушённый на стекле плохо читается */
+.advantages__stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* мобилка: по центру, с 768 — к верху */
+  gap: var(--space-stat);
+  padding: var(--space-3);
+  border: var(--border-w) solid var(--color-line-strong);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-glass-light);
+}
+
+.advantages__value {
+  font-size: var(--fs-stat);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-none);
+  letter-spacing: var(--ls-heading);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.advantages__unit {
+  font-size: var(--fs-h3);
+  letter-spacing: 0;
+}
+
+/* на мобилке подпись мельче и плотнее — укладывается в 2 строки */
+.advantages__caption {
+  font-size: var(--fs-stat-caption);
+  letter-spacing: var(--ls-stat-caption);
+  line-height: var(--lh-body);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.advantages__list {
+  grid-row: span 7;
+}
+
+/* карточки: затемнённое стекло поверх фото; текст по центру (мобилка) или у верха, высоту выравнивает грид */
+.advantages__cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* мобилка: по центру, с 768 — к верху */
+  grid-column: 1 / -1;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  overflow: hidden;
+  border: var(--border-w) solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-glass-dark);
+  box-shadow: var(--shadow-card);
+}
+
+.advantages__title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+  text-transform: uppercase;
+}
+
+.advantages__text {
+  max-width: var(--measure-short);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+/* ячейка с фото и стеклянной плашкой — до 1100 последняя в блоке */
+.advantages__cell--photo {
+  order: 1;
+  justify-content: flex-end;
+  padding: var(--space-4);
+}
+
+.advantages__photo {
+  position: absolute;
+  inset: 0;
+}
+
+.advantages__glass {
+  position: relative;
+  align-self: flex-start;
+  padding-inline: var(--space-4);
+  font-size: var(--fs-glass-caption);  /* в 1 строку */
+  line-height: var(--lh-title);
+  border-radius: var(--radius-md);
+}
+
+/* 768–1099: 2 колонки, картинка на обе в конце блока */
+@media (min-width: 768px) {
+  .advantages__band {
+    display: block;
+  }
+
+  .advantages__list {
+    grid-row: span 4;
+  }
+
+  .advantages__stat,
+  .advantages__cell {
+    justify-content: flex-start;
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    backdrop-filter: blur(var(--blur-glass));
+  }
+
+  .advantages__stat {
+    padding: var(--space-5);
+  }
+
+  .advantages__caption {
+    font-size: var(--fs-label);
+    letter-spacing: var(--ls-label);
+  }
+
+  .advantages__cell {
+    grid-column: auto;
+  }
+
+  /* фон ячейки закрыт своим фото — блюр не нужен */
+  .advantages__cell--photo {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .advantages__glass {
+    padding-inline: var(--space-5);
+    border-radius: var(--radius-pill);
+  }
+}
+
+@media (min-width: 1024px) {
+  .advantages__cell,
+  .advantages__stat {
+    padding: var(--space-6);
+  }
+
+  .advantages__cell--photo {
+    padding: var(--space-5);
+  }
+}
+
+/* с 1100: 4 колонки — статы в ряд, картинка на колонках 2–3 третьей строки */
+@media (min-width: 1100px) {
+  .advantages__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .advantages__stats {
+    grid-row: span 1;
+  }
+
+  .advantages__list {
+    grid-row: span 2;
+  }
+
+  .advantages__cell--photo {
+    order: 0;
+    grid-column: span 2;
+  }
+}

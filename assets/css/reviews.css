@@ -1,0 +1,121 @@
+/* отзывы: слайдер карточек */
+.reviews__controls {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.reviews__counter {
+  margin-right: auto;
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}
+
+.reviews__track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--grid-gap);
+  margin-inline: calc(var(--page-gutter) * -1);
+  padding: var(--space-2) var(--page-gutter) var(--space-7);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--page-gutter);
+  scrollbar-width: none;
+}
+
+.reviews__track::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews__item {
+  display: flex;
+  flex: 0 0 var(--slide-review);
+  scroll-snap-align: start;
+}
+
+.reviews__card {
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--space-8);
+  min-height: var(--size-review-min);
+}
+
+.reviews__text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.reviews__author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-author);
+  border-top: var(--border-w) solid var(--color-line);
+}
+
+.reviews__name {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+  text-transform: uppercase;
+}
+
+/* мобилка: подпись всегда в две строки — имя автора на одной высоте во всех карточках */
+.reviews__meta {
+  min-height: var(--size-meta-min);
+  color: var(--color-text-muted);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .reviews__track {
+    align-items: flex-start;
+  }
+
+  .reviews__item {
+    flex-basis: var(--slide-review-md);
+  }
+
+  .reviews__author {
+    padding-top: var(--space-5);
+  }
+
+  .reviews__meta {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews__intro {
+    grid-column: 3 / 10;
+  }
+
+  .reviews__controls {
+    grid-column: 10 / -1;
+    align-self: end;
+    justify-self: end;
+  }
+
+  .reviews__counter {
+    margin-right: var(--space-3);
+  }
+
+  /* карточка = 4 колонки сетки, промежуток трека = --grid-gap */
+  .reviews__item {
+    flex-basis: calc(var(--col-step) * 4 - var(--grid-gap));
+  }
+
+  .reviews__card {
+    padding: var(--space-7);
+  }
+
+  /* шахматка: каждая вторая карточка ниже */
+  .reviews__item--shift {
+    margin-top: var(--space-8);
+  }
+}

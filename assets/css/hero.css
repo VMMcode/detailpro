@@ -1,0 +1,215 @@
+/* hero: вордмарк, фото, описание и кнопка; с секвенцией кадров (hero.js) закрепляется, пока прокрутка «включает фары» */
+.hero {
+  position: relative;
+}
+
+.hero__sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* мобилка: всё содержимое прижато к низу, свободное место — между шапкой и вордмарком */
+  height: var(--hero-h);
+  padding-top: var(--header-h);
+  overflow-x: clip; /* страховка от горизонтального скролла */
+  container-type: inline-size; /* 100cqw — ширина hero: от неё мобильный слот фото считает высоту */
+}
+
+/* вордмарк над фото: растворяющийся верх фото уходит под буквы */
+.hero__inner {
+  position: relative;
+  z-index: var(--z-raised);
+  container-type: inline-size;
+  padding-bottom: var(--space-5);
+}
+
+/* одна строка на всех ширинах: hero.js задаёт --wordmark-size и --wordmark-shift,
+   чтобы контур букв (без боковых полей глифов) совпал с краями контейнера */
+.hero__wordmark {
+  margin-left: var(--wordmark-shift, 0);
+  font-size: var(--wordmark-size, var(--fs-wordmark-hero));
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-wordmark);
+  letter-spacing: var(--ls-wordmark);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* слово — маска: буквы поднимаются из-под неё */
+.hero__word {
+  display: inline-block;
+  overflow: clip;
+  padding-block: var(--mask-pad);
+  margin-block: calc(var(--mask-pad) * -1);
+}
+
+.hero__letter {
+  display: inline-block;
+}
+
+.js .hero__letter {
+  transform: translateY(var(--mask-hide));
+  transition: transform var(--dur-slow) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+
+/* сцена: по горизонтали clip, чтобы широкое фото на мобилке не давало скролла */
+.hero__stage {
+  position: relative;
+  z-index: var(--z-base);
+  flex: 0 1 auto; /* мобилка: на низком экране сцена сжимается за счёт слота с фото */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-x: clip;
+}
+
+/* слот — место под фото, всегда ниже вордмарка; size-контейнер: фото внутри берёт
+   ширину min(ширина по токену, высота слота × пропорции кадра) и не наезжает на вордмарк.
+   мобилка: слот под кнопкой, высота — по ширине фото; на низком экране слот сжимается вместе с фото */
+.hero__slot {
+  position: relative;
+  order: 1;
+  flex: 0 1 auto;
+  height: calc(var(--hero-media-gap) + 100cqw * var(--hero-media-span) * (1 - var(--hero-media-crop)) / (var(--hero-media-ratio)));
+  min-height: 0;
+  padding-top: var(--hero-media-gap);
+  container-type: size;
+}
+
+/* обёртка ровно по видимой части кадра, поэтому маска растворения лежит на самом фото */
+.hero__media {
+  --hero-media-w: min(100cqw * var(--hero-media-span), 100cqh * (var(--hero-media-ratio)) / (1 - var(--hero-media-crop)));
+  position: absolute;
+  z-index: var(--z-below);
+  bottom: 0;
+  left: 50%;
+  width: var(--hero-media-w);
+  height: calc(var(--hero-media-w) * (1 - var(--hero-media-crop)) / (var(--hero-media-ratio)));
+  overflow: clip;
+  background-color: var(--color-bg);
+  translate: -50% 0; /* отдельным свойством: transform занят анимацией появления */
+  transform-origin: 50% 100%;
+  /* две маски пересекаются: растворение сверху (и снизу на мобилке) и по бокам */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, var(--mask-solid) var(--hero-fade-end), var(--mask-solid) calc(100% - var(--hero-fade-bottom)), transparent 100%),
+    linear-gradient(to right, transparent 0%, var(--mask-solid) var(--hero-fade-side), var(--mask-solid) calc(100% - var(--hero-fade-side)), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, var(--mask-solid) var(--hero-fade-end), var(--mask-solid) calc(100% - var(--hero-fade-bottom)), transparent 100%),
+    linear-gradient(to right, transparent 0%, var(--mask-solid) var(--hero-fade-side), var(--mask-solid) calc(100% - var(--hero-fade-side)), transparent 100%);
+  mask-composite: intersect;
+  /* если фон кадра чуть светлее фона сайта — шва не видно */
+  mix-blend-mode: lighten;
+}
+
+.js .hero__media {
+  opacity: 0;
+  transform: scale(var(--scale-hero));
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform calc(var(--dur-slow) * 2) var(--ease-out);
+}
+
+/* кадр целиком в своих пропорциях, привязан к верху: срезанная доля уходит вниз за обёртку */
+.hero__picture,
+.hero__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% / (1 - var(--hero-media-crop)));
+}
+
+/* кадры секвенции рисуются поверх фото; фото остаётся фолбэком */
+.hero__canvas {
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.hero__bar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-bar-gap);
+}
+
+.js .hero__bar {
+  opacity: 0;
+  transform: translateY(var(--reveal-shift));
+  transition:
+    opacity var(--dur-reveal) var(--ease-out) var(--dur-slow),
+    transform var(--dur-reveal) var(--ease-out) var(--dur-slow);
+}
+
+.hero__lead {
+  max-width: var(--measure-sub);
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  text-transform: uppercase;
+}
+
+.hero__button {
+  width: 100%;
+}
+
+/* закрепление включает JS, только когда первый кадр загрузился */
+.hero--sequence {
+  height: calc(var(--hero-h) + var(--hero-scroll));
+}
+
+.hero--sequence .hero__canvas {
+  opacity: 1;
+}
+
+.hero--loaded .hero__letter {
+  transform: none;
+}
+
+.hero--loaded .hero__media {
+  opacity: 1;
+  transform: none;
+}
+
+.hero--loaded .hero__bar {
+  opacity: 1;
+  transform: none;
+}
+
+/* планшет: сцена на всю высоту под вордмарком, слот — всё, что осталось над описанием */
+@media (min-width: 768px) {
+  .hero__stage {
+    flex: 1 1 0;
+  }
+
+  .hero__slot {
+    order: 0;
+    flex: 1 1 0;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .hero__bar {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-block: var(--space-7);
+  }
+
+  .hero__button {
+    width: auto;
+    flex: none;
+  }
+}
+
+/* десктоп: слот на всю сцену, авто «стоит» на нижней границе, описание поверх */
+@media (min-width: 1024px) {
+  .hero__stage {
+    justify-content: flex-end;
+  }
+
+  .hero__slot {
+    position: absolute;
+    inset: 0;
+  }
+}

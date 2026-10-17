@@ -1,0 +1,462 @@
+/* section: общий ритм секций и шапка «метка слева» */
+.section {
+  padding-block: var(--section-pad);
+  scroll-margin-top: var(--scroll-offset);
+}
+
+.section__head {
+  row-gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.section__label {
+  grid-column: 1 / -1;
+}
+
+.section__intro {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.section__sub {
+  max-width: var(--measure-sub);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  /* подзаголовок выровнен по сдвинутой строке «лесенки» */
+  .section__sub {
+    padding-left: var(--heading-shift);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__head {
+    margin-bottom: var(--space-9);
+  }
+
+  /* лейбл — колонки 1–2, контент секции — 3–12 */
+  .section__label {
+    grid-column: 1 / 3;
+    align-self: start;
+    padding-top: var(--space-3);
+  }
+
+  .section__intro {
+    grid-column: 3 / -1;
+  }
+
+  /* подзаголовок: колонки 4–7, max-width включает padding-left (сдвиг лесенки) */
+  .section__sub {
+    max-width: calc(var(--heading-shift) + var(--measure-text));
+  }
+}
+
+/* label: лейбл раздела «⊕ ТЕКСТ» */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--fs-section-label);
+  line-height: var(--lh-none);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.label__icon {
+  flex: none;
+  width: var(--size-icon-xs);
+  height: var(--size-icon-xs);
+}
+
+/* heading: капс-заголовки, «лесенка», двухтон */
+.heading {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-heading);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.heading--h2 {
+  font-size: var(--fs-h2);
+}
+
+/* строка — маска для анимации; поля, чтобы не резались «Й» и выносные */
+.heading__line {
+  display: block;
+  overflow: clip;
+  padding-block: var(--mask-pad);
+  margin-block: calc(var(--mask-pad) * -1);
+}
+
+.heading__line--shift {
+  padding-left: var(--heading-shift);
+}
+
+.heading__text {
+  display: inline-block;
+}
+
+.heading__muted {
+  color: var(--color-text-dim);
+}
+
+/* в узких карточках (форма) — «лесенка» вполовину */
+.heading--compact .heading__line--shift {
+  padding-left: calc(var(--heading-shift) / 2);
+}
+
+/* button */
+.button {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--size-button);
+  padding: 0 var(--button-pad-x);
+  font-family: var(--font-sans);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-none);
+  letter-spacing: var(--ls-button);
+  white-space: nowrap;
+  border: var(--border-w) solid var(--color-transparent);
+  border-radius: var(--radius-pill);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(var(--scale-press));
+}
+
+.button__icon {
+  flex: none;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+/* глянцевое серебро; на ховере — только мягкое свечение (одинаково у всех серебряных кнопок) */
+.button--accent {
+  color: var(--color-on-accent);
+  background: var(--gradient-silver);
+  box-shadow: var(--shadow-gloss);
+}
+
+.button--ghost {
+  color: var(--color-text);
+  border-color: var(--color-line-strong);
+  background-color: var(--color-transparent);
+}
+
+.button--wide {
+  width: 100%;
+}
+
+.button:disabled {
+  opacity: var(--opacity-disabled);
+}
+
+@media (hover: hover) {
+  .button--accent:hover:not(:disabled) {
+    box-shadow: var(--shadow-gloss), var(--shadow-glow);
+  }
+
+  .button--ghost:hover {
+    background-color: var(--color-surface-2);
+  }
+
+  .button:hover .button__icon {
+    transform: translate(var(--shift-icon), calc(var(--shift-icon) * -1));
+  }
+}
+
+/* arrow-button: круглая кнопка-стрелка */
+.arrow-button {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-arrow);
+  height: var(--size-arrow);
+  color: var(--color-text);
+  border: var(--border-w) solid var(--color-transparent);
+  border-radius: var(--radius-pill);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    opacity var(--dur-fast) var(--ease-out);
+}
+
+.arrow-button__icon {
+  width: var(--size-icon);
+  height: var(--size-icon);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.arrow-button--outline {
+  border-color: var(--color-line-strong);
+}
+
+.arrow-button--filled {
+  color: var(--color-on-accent);
+  background: var(--gradient-silver);
+  box-shadow: var(--shadow-gloss);
+}
+
+.arrow-button--glass {
+  border-color: var(--color-line);
+  background-color: var(--color-glass);
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  backdrop-filter: blur(var(--blur-glass));
+}
+
+.arrow-button--small {
+  width: var(--size-arrow-sm);
+  height: var(--size-arrow-sm);
+}
+
+/* крестик закрытия: на ховере заливается серебром и поворачивается на 90° */
+.arrow-button--close {
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    rotate var(--dur-base) var(--ease-out);
+}
+
+.arrow-button:disabled {
+  opacity: var(--opacity-disabled);
+}
+
+@media (hover: hover) {
+  .arrow-button--outline:hover:not(:disabled) {
+    border-color: var(--color-accent);
+  }
+
+  .arrow-button--filled:hover:not(:disabled) {
+    box-shadow: var(--shadow-gloss), var(--shadow-glow);
+  }
+
+  .arrow-button--close:hover:not(:disabled) {
+    color: var(--color-on-accent);
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    rotate: var(--rotate-close);
+  }
+
+  .arrow-button:hover:not(:disabled) .arrow-button__icon--next {
+    transform: translateX(var(--shift-icon));
+  }
+
+  .arrow-button:hover:not(:disabled) .arrow-button__icon--prev {
+    transform: translateX(calc(var(--shift-icon) * -1));
+  }
+
+  .arrow-button:hover:not(:disabled) .arrow-button__icon--diag {
+    transform: translate(var(--shift-icon), calc(var(--shift-icon) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-button--close {
+    transition: none;
+  }
+}
+
+/* chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--chip-pad-y) var(--chip-pad-x);
+  color: var(--color-text);
+  font-size: var(--fs-label);
+  line-height: var(--lh-none);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: var(--border-w) solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+}
+
+.chip--glass {
+  border-color: var(--color-line);
+  background-color: var(--color-glass);
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  backdrop-filter: blur(var(--blur-glass));
+}
+
+/* tread: след протектора между секциями */
+.tread {
+  height: var(--tread-h);
+  overflow: hidden;
+  -webkit-mask-image: var(--mask-fade-x);
+  mask-image: var(--mask-fade-x);
+}
+
+/* лента шире блока на один фрагмент: сдвиг по скроллу зациклен в пределах фрагмента;
+   без JS — ровные штрихи, JS подставляет рисунок протектора в --tread-pattern */
+.tread__strip {
+  width: calc(100% + var(--tread-tile));
+  height: 100%;
+  background-image: var(--tread-pattern, var(--pattern-tread));
+  background-size: var(--tread-tile) 100%;
+  transform: translate3d(calc(var(--tread-shift, 0px) * -1), 0, 0);
+  will-change: transform;
+}
+
+/* зеркало: вместе с рисунком разворачивается и направление сдвига ленты */
+.tread--reverse {
+  transform: scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tread__strip {
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* media: обёртка фото с фиксированными пропорциями */
+.media {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-3);
+}
+
+.media__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media--4x3 {
+  aspect-ratio: 4 / 3;
+}
+
+.media--8x5 {
+  aspect-ratio: 8 / 5;
+}
+
+/* единый цветокор, если стоковые фото не совпадут по тону */
+.media--mono .media__img {
+  filter: var(--filter-mono);
+}
+
+/* card */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-pad);
+  border: var(--border-w) solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.card--text {
+  padding: var(--space-6);
+}
+
+.card__media {
+  border-radius: var(--radius-md);
+}
+
+.card__img {
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.card__chip {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: var(--z-base);
+}
+
+.card__arrow {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: var(--z-base);
+}
+
+.card__body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-3) var(--space-3);
+}
+
+.card__title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-title);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-heading);
+}
+
+/* ссылка-растяжка: вся карточка кликабельна */
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-raised);
+  border-radius: var(--radius-lg);
+}
+
+.card__link:focus-visible {
+  outline: none;
+}
+
+.card__link:focus-visible::after {
+  outline: var(--focus-w) solid var(--color-accent);
+  outline-offset: var(--focus-offset);
+}
+
+.card__index {
+  flex: none;
+  color: var(--color-text-dim);
+  font-size: var(--fs-index);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-none);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (hover: hover) {
+  .card:hover .card__img {
+    transform: scale(var(--scale-hover));
+  }
+
+  .card:hover .arrow-button__icon--diag {
+    transform: translate(var(--shift-card), calc(var(--shift-card) * -1));
+  }
+}
+
+/* glass: стеклянная плашка поверх фото */
+.glass {
+  padding: var(--space-3) var(--space-5);
+  border: var(--border-w) solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-glass);
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  backdrop-filter: blur(var(--blur-glass));
+}

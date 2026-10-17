@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Детейлинг в Москве — студия DETAILPRO | Полировка, керамика, PPF</title>
+  <meta name="description" content="Детейлинг-студия премиум-класса в Москва-Сити: полировка кузова, керамическое покрытие, оклейка плёнкой PPF, химчистка салона. Запись онлайн, гарантия.">
+  <link rel="canonical" href="https://vmmcode.github.io/detailpro/">
+  <meta name="theme-color" content="#0a0a0b">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="DETAILPRO">
+  <meta property="og:title" content="DETAILPRO — детейлинг премиум-класса в Москве">
+  <meta property="og:description" content="Полировка, керамика, защитная плёнка и уход за салоном. Запишитесь онлайн.">
+  <meta property="og:url" content="https://vmmcode.github.io/detailpro/">
+  <meta property="og:image" content="https://vmmcode.github.io/detailpro/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/img/hero-car.webp" as="image" type="image/webp" fetchpriority="high">
+
+  <!-- маркер .js включает скрытые состояния анимаций; если скрипты не загрузились — снимаем его, чтобы контент был виден.
+       preload шрифтов — только на сервере: с диска (file://) Chrome блокирует такие запросы и пишет ошибку в консоль -->
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!(window.DETAILPRO && window.DETAILPRO.ready)) document.documentElement.classList.remove('js'); }, 4000);
+    if (location.protocol !== 'file:') {
+      ['onest-cyrillic', 'onest-latin'].forEach(function (name) {
+        var link = document.createElement('link');
+        link.rel = 'preload'; link.as = 'font'; link.type = 'font/woff2'; link.crossOrigin = 'anonymous';
+        link.href = 'assets/fonts/' + name + '.woff2';
+        document.head.appendChild(link);
+      });
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/intro.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <link rel="stylesheet" href="assets/css/advantages.css">
+  <link rel="stylesheet" href="assets/css/process.css">
+  <link rel="stylesheet" href="assets/css/reviews.css">
+  <link rel="stylesheet" href="assets/css/faq.css">
+  <link rel="stylesheet" href="assets/css/booking.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/header.js"></script>
+  <script defer src="assets/js/reveal.js"></script>
+  <script defer src="assets/js/slider.js"></script>
+  <script defer src="assets/js/gallery.js"></script>
+  <script defer src="assets/js/faq.js"></script>
+  <script defer src="assets/js/vendor/nice-select2.js"></script>
+  <script defer src="assets/js/form.js"></script>
+  <script defer src="assets/js/hero.js"></script>
+  <script defer src="assets/js/tread.js"></script>
+  <script defer src="assets/js/main.js"></script>
+
+  <!-- schema.org: организация (демо-данные) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "DETAILPRO",
+    "description": "Детейлинг-студия премиум-класса в Москва-Сити: полировка кузова, керамическое покрытие, оклейка плёнкой PPF, химчистка салона.",
+    "url": "https://vmmcode.github.io/detailpro/",
+    "image": "https://vmmcode.github.io/detailpro/assets/img/og-image.jpg",
+    "telephone": "+74950000000",
+    "email": "info@detailpro.example",
+    "priceRange": "₽₽₽",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Демонстрационная, 1, стр. 2",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 55.7490,
+      "longitude": 37.5390
+    },
+    "openingHours": "Mo-Su 09:00-21:00"
+  }
+  </script>
+  <!-- schema.org: faq — тексты дословно как в блоке #faq -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Сколько стоит детейлинг автомобиля в Москве?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Стоимость зависит от услуги, класса и состояния автомобиля: детейлинг-мойка — от 4 500 ₽, полировка кузова — от 25 000 ₽, керамическое покрытие — от 35 000 ₽. Точную цену называем после бесплатного осмотра." }
+      },
+      {
+        "@type": "Question",
+        "name": "Сколько времени занимает работа?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Детейлинг-мойка — 2–3 часа, полировка — 1–2 дня, керамика — 2–3 дня с учётом полимеризации, оклейка плёнкой — от 2 до 5 дней." }
+      },
+      {
+        "@type": "Question",
+        "name": "Чем керамика отличается от полироли?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Полироль держится несколько недель. Керамическое покрытие образует твёрдый защитный слой, который сохраняет блеск и гидрофобный эффект до 3 лет." }
+      },
+      {
+        "@type": "Question",
+        "name": "Нужно ли полировать кузов перед керамикой?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да. Керамика «запечатывает» то, что под ней, поэтому перед нанесением мы убираем царапины и голограммы — иначе дефекты останутся под покрытием." }
+      },
+      {
+        "@type": "Question",
+        "name": "Какая плёнка лучше для защиты кузова?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Мы используем полиуретановую антигравийную плёнку PPF: она эластичная, самовосстанавливается от мелких царапин и не желтеет. Подбираем под задачу и бюджет." }
+      },
+      {
+        "@type": "Question",
+        "name": "Даёте ли вы гарантию?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да, на все работы выдаём письменную гарантию. На керамическое покрытие — до 3 лет, на плёнку — по условиям производителя." }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли оставить автомобиль на весь день?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Да. Боксы закрытые и охраняемые, ключи хранятся в сейфе. Можно оставить машину утром и забрать вечером." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="page">
+
+  <!-- спрайт иконок: stroke = currentColor, 1.5px -->
+  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+    <!-- иконка лейблов: волосяная обводка держит тонкие линии видимыми в мелком размере -->
+    <symbol id="i-target" viewBox="0 0 435 435"><g fill="currentColor" stroke="currentColor" stroke-width=".5" vector-effect="non-scaling-stroke"><path vector-effect="non-scaling-stroke" d="M217.354 33.2816C318.917 33.2816 401.544 115.909 401.544 217.473C401.544 319.037 318.916 401.664 217.354 401.664C115.791 401.664 33.1631 319.036 33.1631 217.473C33.1631 115.91 115.791 33.2816 217.354 33.2816ZM217.354 24.7266C110.903 24.7266 24.6079 111.022 24.6079 217.473C24.6079 323.924 110.903 410.219 217.354 410.219C323.804 410.219 410.1 323.924 410.1 217.473C410.1 111.022 323.804 24.7266 217.354 24.7266Z"/><path vector-effect="non-scaling-stroke" d="M370.816 62.439L62.3015 370.953L63.7242 372.376L372.238 63.8617L370.816 62.439Z"/><path vector-effect="non-scaling-stroke" d="M63.7823 62.5148L62.3596 63.9375L370.874 372.452L372.296 371.029L63.7823 62.5148Z"/><path vector-effect="non-scaling-stroke" d="M217.367 434.754C182.452 434.754 147.548 426.337 115.754 409.508C114.708 408.956 114.312 407.661 114.863 406.618C115.416 405.573 116.715 405.178 117.754 405.728C179.835 438.589 254.034 438.731 316.245 406.117C317.293 405.569 318.582 405.974 319.132 407.018C319.681 408.064 319.278 409.357 318.231 409.905C286.633 426.472 251.995 434.754 217.367 434.754Z"/><path vector-effect="non-scaling-stroke" d="M407.133 321.013C406.793 321.013 406.447 320.931 406.125 320.76C405.083 320.203 404.692 318.907 405.249 317.865C438.74 255.299 438.911 180.499 405.708 117.773C405.156 116.73 405.553 115.435 406.599 114.883C407.64 114.331 408.937 114.729 409.489 115.773C443.359 179.758 443.183 256.062 409.021 319.883C408.635 320.604 407.897 321.013 407.133 321.013Z"/><path vector-effect="non-scaling-stroke" d="M115.885 29.7614C115.12 29.7614 114.383 29.3514 113.996 28.6314C113.44 27.5894 113.831 26.2944 114.872 25.7364C178.465 -8.30357 254.557 -8.59357 318.414 24.9674C319.461 25.5164 319.862 26.8094 319.313 27.8554C318.761 28.9004 317.464 29.3014 316.425 28.7534C253.819 -4.14657 179.229 -3.86057 116.892 29.5074C116.571 29.6794 116.225 29.7614 115.885 29.7614Z"/><path vector-effect="non-scaling-stroke" d="M27.2089 320.271C26.4419 320.271 25.7019 319.858 25.3159 319.134C-8.27412 255.779 -8.44699 180.039 24.852 116.526C25.403 115.482 26.694 115.077 27.739 115.625C28.786 116.173 29.1891 117.466 28.6401 118.512C-4.00291 180.773 -3.8321 255.024 29.0959 317.13C29.6489 318.173 29.251 319.468 28.208 320.021C27.888 320.192 27.5469 320.271 27.2089 320.271Z"/><path vector-effect="non-scaling-stroke" d="M217.354 170.033C243.512 170.033 264.793 191.314 264.793 217.472C264.793 243.63 243.512 264.911 217.354 264.911C191.196 264.911 169.915 243.63 169.915 217.472C169.915 191.314 191.196 170.033 217.354 170.033ZM217.354 161.477C186.429 161.477 161.359 186.547 161.359 217.472C161.359 248.397 186.429 273.467 217.354 273.467C248.279 273.467 273.348 248.397 273.348 217.472C273.348 186.547 248.279 161.477 217.354 161.477Z"/><path vector-effect="non-scaling-stroke" d="M239.925 222.933C242.853 210.533 235.174 198.106 222.773 195.178C210.372 192.25 197.946 199.929 195.018 212.33C192.089 224.73 199.768 237.157 212.169 240.085C224.57 243.013 236.997 235.334 239.925 222.933Z"/></g></symbol>
+    <symbol id="i-arrow-ne" viewBox="0 0 20 20"><path d="M5.5 14.5 14.5 5.5M7.5 5.5h7v7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 20 20"><path d="M3.5 10h13M11 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 20 20"><path d="M16.5 10h-13M9 4.5 3.5 10 9 15.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrows-x" viewBox="0 0 20 20"><path d="M7 6 3 10l4 4M13 6l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-burger" viewBox="0 0 20 20"><path d="M3 7.5h14M3 12.5h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 20 20"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к&nbsp;содержанию</a>
+
+  <!-- шапка -->
+  <header class="header" data-header>
+    <div class="header__blur" aria-hidden="true">
+      <span class="header__blur-layer header__blur-layer--1"></span>
+      <span class="header__blur-layer header__blur-layer--2"></span>
+      <span class="header__blur-layer header__blur-layer--3"></span>
+      <span class="header__blur-layer header__blur-layer--4"></span>
+      <span class="header__blur-layer header__blur-layer--5"></span>
+      <span class="header__blur-layer header__blur-layer--6"></span>
+    </div>
+    <div class="container">
+      <div class="header__inner">
+        <a class="header__logo" href="#hero">DETAILPRO</a>
+        <nav class="header__nav" aria-label="Основная навигация">
+          <ul class="header__list">
+            <li class="header__item"><a class="header__link" data-nav-link="header__link" href="#services">Услуги</a></li>
+            <li class="header__item"><a class="header__link" data-nav-link="header__link" href="#works">Работы</a></li>
+            <li class="header__item"><a class="header__link" data-nav-link="header__link" href="#reviews">Отзывы</a></li>
+            <li class="header__item"><a class="header__link" data-nav-link="header__link" href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <a class="header__phone" data-demo href="tel:+74950000000">+7&nbsp;(495)&nbsp;000-00-00</a>
+          <a class="header__cta button button--ghost" data-booking-open href="#booking">
+            Записаться
+            <svg class="button__icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+          </a>
+          <button class="header__burger arrow-button arrow-button--outline" data-menu-open aria-label="Открыть меню" aria-expanded="false" aria-controls="menu" type="button">
+            <svg class="arrow-button__icon" aria-hidden="true" focusable="false"><use href="#i-burger"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- мобильное меню (до 1024px) -->
+  <div class="menu" id="menu" data-menu aria-modal="true" aria-label="Меню" role="dialog">
+    <div class="container">
+      <div class="menu__inner">
+        <div class="menu__top">
+          <a class="menu__logo" data-menu-link href="#hero">DETAILPRO</a>
+          <button class="menu__close arrow-button arrow-button--outline arrow-button--close" data-menu-close aria-label="Закрыть меню" type="button">
+            <svg class="arrow-button__icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+          </button>
+        </div>
+        <nav class="menu__nav" aria-label="Разделы сайта">
+          <ul class="menu__list">
+            <li class="menu__item" style="--i: 0"><a class="menu__link" data-menu-link data-nav-link="menu__link" href="#services">Услуги</a></li>
+            <li class="menu__item" style="--i: 1"><a class="menu__link" data-menu-link data-nav-link="menu__link" href="#works">Работы</a></li>
+            <li class="menu__item" style="--i: 2"><a class="menu__link" data-menu-link data-nav-link="menu__link" href="#advantages">Преимущества</a></li>
+            <li class="menu__item" style="--i: 3"><a class="menu__link" data-menu-link data-nav-link="menu__link" href="#process">Этапы</a></li>
+            <li class="menu__item" style="--i: 4"><a class="menu__link" data-menu-link data-nav-link="menu__link" href="#reviews">Отзывы</a></li>
+            <li class="menu__item" style="--i: 5"><a class="menu__link" data-menu-link data-nav-link="menu__link" href="#faq">FAQ</a></li>
+            <li class="menu__item" style="--i: 6"><a class="menu__link" data-menu-link data-nav-link="menu__link" href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="menu__footer">
+          <a class="menu__phone" data-demo href="tel:+74950000000">+7&nbsp;(495)&nbsp;000-00-00</a>
+          <a class="menu__cta button button--accent button--wide" data-booking-open data-menu-link href="#booking">
+            Записаться
+            <svg class="button__icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main" id="main" tabindex="-1">
+
+    <!-- hero -->
+    <section class="hero" id="hero" data-hero aria-labelledby="hero-title">
+      <!-- липкая сцена: с секвенцией кадров hero закрепляется на экране, пока фары загораются -->
+      <div class="hero__sticky" data-hero-sticky>
+        <div class="container">
+          <div class="hero__inner">
+            <h1 class="visually-hidden" id="hero-title">Детейлинг премиум-класса в&nbsp;Москве</h1>
+            <p class="hero__wordmark" data-hero-wordmark aria-hidden="true">
+              <span class="hero__word"><span class="hero__letter" style="--i: 0">D</span><span class="hero__letter" style="--i: 1">E</span><span class="hero__letter" style="--i: 2">T</span><span class="hero__letter" style="--i: 3">A</span><span class="hero__letter" style="--i: 4">I</span><span class="hero__letter" style="--i: 5">L</span></span><span class="hero__word"><span class="hero__letter" style="--i: 6">P</span><span class="hero__letter" style="--i: 7">R</span><span class="hero__letter" style="--i: 8">O</span></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero__stage">
+          <!-- слот под фото всегда ниже вордмарка; обёртка с маской ровно по кадру, внутри фото и canvas -->
+          <div class="hero__slot">
+            <div class="hero__media">
+              <picture class="hero__picture">
+                <img class="hero__img media__img" data-hero-img src="assets/img/hero-car.webp" width="1924" height="996" alt="Чёрный автомобиль после детейлинга в студии DETAILPRO" fetchpriority="high" decoding="async">
+              </picture>
+              <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="hero__bar">
+              <p class="hero__lead">Полировка, керамика, защитная плёнка и&nbsp;уход за&nbsp;салоном. Возвращаем автомобилю заводской блеск и&nbsp;сохраняем его надолго.</p>
+              <a class="hero__button button button--accent" data-booking-open href="#booking">
+                Записаться на&nbsp;детейлинг
+                <svg class="button__icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- вступление -->
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__inner grid">
+          <div class="about__label section__label">
+            <p class="label reveal" data-reveal>
+              <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+              О студии
+            </p>
+          </div>
+          <div class="about__body">
+            <h2 class="about__title heading heading--h2" id="about-title" data-reveal="heading--visible">
+              <span class="heading__line"><span class="heading__text heading__muted reveal reveal--mask">Ваш автомобиль заслуживает больше,</span></span>
+              <span class="heading__line heading__line--shift"><span class="heading__text reveal reveal--mask" data-reveal-delay="1">чем просто мойку.</span></span>
+            </h2>
+            <p class="about__text reveal" data-reveal data-reveal-delay="2">DETAILPRO&nbsp;— детейлинг-центр в&nbsp;Москве для владельцев автомобилей бизнес- и&nbsp;премиум-класса. Мы работаем с&nbsp;лакокрасочным покрытием, стёклами и&nbsp;салоном по&nbsp;технологиям ведущих производителей автохимии: без спешки, с&nbsp;фотоотчётом и&nbsp;гарантией на&nbsp;результат.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" aria-hidden="true"><div class="tread" data-tread><div class="tread__strip" data-tread-strip></div></div></div>
+
+    <!-- услуги и цены -->
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="services__inner">
+          <div class="section__head grid">
+            <div class="section__label">
+              <p class="label reveal" data-reveal>
+                <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+                Услуги и&nbsp;цены
+              </p>
+            </div>
+            <div class="section__intro">
+              <h2 class="heading heading--h2" id="services-title" data-reveal="heading--visible">
+                <span class="heading__line"><span class="heading__text reveal reveal--mask">Услуги детейлинга</span></span>
+                <span class="heading__line heading__line--shift"><span class="heading__text reveal reveal--mask" data-reveal-delay="1">и&nbsp;стоимость</span></span>
+              </h2>
+              <p class="services__sub section__sub reveal" data-reveal data-reveal-delay="2">Точную цену называем после осмотра&nbsp;— она зависит от&nbsp;класса, размера и&nbsp;состояния автомобиля.</p>
+            </div>
+          </div>
+
+          <div class="services__list">
+            <article class="services__row reveal" id="service-wash" data-reveal data-service-row>
+              <span class="services__index">[01]</span>
+              <div class="services__preview media">
+                <img class="services__img media__img" src="assets/img/service-wash.webp" width="1200" height="900" alt="Детейлинг-мойка автомобиля" loading="lazy" decoding="async">
+              </div>
+              <h3 class="services__title">Детейлинг-мойка</h3>
+              <p class="services__desc">Двухфазная бесконтактная мойка, очистка дисков, битумных пятен и&nbsp;труднодоступных мест. Безопасно для покрытия.</p>
+              <div class="services__meta">
+                <p class="services__price" data-demo>от&nbsp;4&nbsp;500&nbsp;₽</p>
+                <span class="services__chip chip">Мойка</span>
+              </div>
+              <a class="services__link arrow-button arrow-button--outline" data-booking-open data-service-link="Детейлинг-мойка" aria-label="Записаться: Детейлинг-мойка" href="#booking">
+                <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </article>
+
+            <article class="services__row reveal" id="service-polish" data-reveal data-service-row>
+              <span class="services__index">[02]</span>
+              <div class="services__preview media">
+                <img class="services__img media__img" src="assets/img/service-polish.webp" width="1200" height="900" alt="Полировка кузова автомобиля" loading="lazy" decoding="async">
+              </div>
+              <h3 class="services__title">Полировка кузова</h3>
+              <p class="services__desc">Восстановительная и&nbsp;защитная полировка: удаляем царапины, голограммы и&nbsp;потёртости, возвращаем глубину цвета.</p>
+              <div class="services__meta">
+                <p class="services__price" data-demo>от&nbsp;25&nbsp;000&nbsp;₽</p>
+                <span class="services__chip chip">Полировка</span>
+              </div>
+              <a class="services__link arrow-button arrow-button--outline" data-booking-open data-service-link="Полировка кузова" aria-label="Записаться: Полировка кузова" href="#booking">
+                <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </article>
+
+            <article class="services__row reveal" id="service-ceramic" data-reveal data-service-row>
+              <span class="services__index">[03]</span>
+              <div class="services__preview media">
+                <img class="services__img media__img" src="assets/img/service-ceramic.webp" width="1200" height="900" alt="Нанесение керамического покрытия" loading="lazy" decoding="async">
+              </div>
+              <h3 class="services__title">Керамическое покрытие</h3>
+              <p class="services__desc">Защитное покрытие для кузова, дисков и&nbsp;стёкол: гидрофобный эффект, стойкий блеск, защита от&nbsp;реагентов. Гарантия до&nbsp;3&nbsp;лет.</p>
+              <div class="services__meta">
+                <p class="services__price" data-demo>от&nbsp;35&nbsp;000&nbsp;₽</p>
+                <span class="services__chip chip">Керамика</span>
+              </div>
+              <a class="services__link arrow-button arrow-button--outline" data-booking-open data-service-link="Керамическое покрытие" aria-label="Записаться: Керамическое покрытие" href="#booking">
+                <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </article>
+
+            <article class="services__row reveal" id="service-ppf" data-reveal data-service-row>
+              <span class="services__index">[04]</span>
+              <div class="services__preview media">
+                <img class="services__img media__img" src="assets/img/service-ppf.webp" width="1200" height="900" alt="Оклейка автомобиля защитной плёнкой" loading="lazy" decoding="async">
+              </div>
+              <h3 class="services__title">Оклейка плёнкой PPF</h3>
+              <p class="services__desc">Антигравийная полиуретановая плёнка на&nbsp;зоны риска или кузов целиком. Защищает от&nbsp;сколов и&nbsp;царапин, незаметна на&nbsp;кузове.</p>
+              <div class="services__meta">
+                <p class="services__price" data-demo>от&nbsp;60&nbsp;000&nbsp;₽</p>
+                <span class="services__chip chip">Плёнка</span>
+              </div>
+              <a class="services__link arrow-button arrow-button--outline" data-booking-open data-service-link="Оклейка плёнкой PPF" aria-label="Записаться: Оклейка плёнкой PPF" href="#booking">
+                <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </article>
+
+            <article class="services__row reveal" id="service-interior" data-reveal data-service-row>
+              <span class="services__index">[05]</span>
+              <div class="services__preview media">
+                <img class="services__img media__img" src="assets/img/service-interior.webp" width="1200" height="900" alt="Химчистка кожаного салона" loading="lazy" decoding="async">
+              </div>
+              <h3 class="services__title">Химчистка салона</h3>
+              <p class="services__desc">Глубокая чистка и&nbsp;уход за&nbsp;кожей, текстилем, алькантарой и&nbsp;пластиком. Удаляем пятна и&nbsp;запахи, защищаем материалы.</p>
+              <div class="services__meta">
+                <p class="services__price" data-demo>от&nbsp;15&nbsp;000&nbsp;₽</p>
+                <span class="services__chip chip">Салон</span>
+              </div>
+              <a class="services__link arrow-button arrow-button--outline" data-booking-open data-service-link="Химчистка салона" aria-label="Записаться: Химчистка салона" href="#booking">
+                <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </article>
+
+            <article class="services__row reveal" id="service-glass" data-reveal data-service-row>
+              <span class="services__index">[06]</span>
+              <div class="services__preview media">
+                <img class="services__img media__img" src="assets/img/service-glass.webp" width="1200" height="900" alt="Антидождь на лобовом стекле" loading="lazy" decoding="async">
+              </div>
+              <h3 class="services__title">Антидождь и&nbsp;защита стёкол</h3>
+              <p class="services__desc">Гидрофобное покрытие лобового и&nbsp;боковых стёкол: лучше обзор в&nbsp;дождь, стекло дольше остаётся чистым.</p>
+              <div class="services__meta">
+                <p class="services__price" data-demo>от&nbsp;3&nbsp;000&nbsp;₽</p>
+                <span class="services__chip chip">Стёкла</span>
+              </div>
+              <a class="services__link arrow-button arrow-button--outline" data-booking-open data-service-link="Антидождь" aria-label="Записаться: Антидождь и защита стёкол" href="#booking">
+                <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" aria-hidden="true"><div class="tread" data-tread><div class="tread__strip" data-tread-strip></div></div></div>
+
+    <!-- галерея -->
+    <section class="gallery section" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <div class="gallery__inner">
+          <div class="gallery__slider" data-slider>
+            <div class="section__head grid gallery__head">
+              <div class="section__label">
+                <p class="label reveal" data-reveal>
+                  <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+                  Портфолио
+                </p>
+              </div>
+              <div class="section__intro gallery__intro">
+                <h2 class="heading heading--h2" id="works-title" data-reveal="heading--visible">
+                  <span class="heading__line"><span class="heading__text reveal reveal--mask">Наши работы</span></span>
+                  <span class="heading__line heading__line--shift"><span class="heading__text reveal reveal--mask" data-reveal-delay="1">по&nbsp;детейлингу</span></span>
+                </h2>
+                <p class="section__sub reveal" data-reveal data-reveal-delay="2">Каждый автомобиль мы фотографируем до&nbsp;и&nbsp;после&nbsp;— результат видно без слов.</p>
+              </div>
+              <div class="gallery__controls">
+                <p class="gallery__counter nums" data-slider-counter aria-live="polite">01 / 06</p>
+                <button class="arrow-button arrow-button--outline" data-slider-prev aria-label="Предыдущая работа" type="button">
+                  <svg class="arrow-button__icon arrow-button__icon--prev" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg>
+                </button>
+                <button class="arrow-button arrow-button--filled" data-slider-next aria-label="Следующая работа" type="button">
+                  <svg class="arrow-button__icon arrow-button__icon--next" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <ul class="gallery__track" data-slider-track aria-label="Работы студии">
+              <li class="gallery__item reveal" data-reveal data-slider-item>
+                <article class="gallery__card card">
+                  <div class="card__media media gallery__media">
+                    <img class="card__img media__img" src="assets/img/gallery-01.webp" width="1200" height="896" alt="Полировка и керамика кузова" loading="lazy" decoding="async">
+                    <span class="card__chip chip chip--glass">Керамика</span>
+                    <span class="card__arrow arrow-button arrow-button--glass arrow-button--small" aria-hidden="true">
+                      <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+                    </span>
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" data-lightbox-item data-caption="Полировка и&nbsp;керамика кузова" data-width="1200" data-height="896" href="assets/img/gallery-01.webp">Полировка и&nbsp;керамика кузова</a></h3>
+                    <span class="card__index">01</span>
+                  </div>
+                </article>
+              </li>
+              <li class="gallery__item reveal" data-reveal data-reveal-delay="1" data-slider-item>
+                <article class="gallery__card card">
+                  <div class="card__media media gallery__media">
+                    <img class="card__img media__img" src="assets/img/gallery-02.webp" width="1200" height="896" alt="Оклейка передней части плёнкой PPF" loading="lazy" decoding="async">
+                    <span class="card__chip chip chip--glass">Плёнка</span>
+                    <span class="card__arrow arrow-button arrow-button--glass arrow-button--small" aria-hidden="true">
+                      <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+                    </span>
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" data-lightbox-item data-caption="Оклейка передней части плёнкой PPF" data-width="1200" data-height="896" href="assets/img/gallery-02.webp">Оклейка передней части плёнкой PPF</a></h3>
+                    <span class="card__index">02</span>
+                  </div>
+                </article>
+              </li>
+              <li class="gallery__item reveal" data-reveal data-slider-item>
+                <article class="gallery__card card">
+                  <div class="card__media media gallery__media">
+                    <img class="card__img media__img" src="assets/img/gallery-03.webp" width="1200" height="896" alt="Восстановление фар" loading="lazy" decoding="async">
+                    <span class="card__chip chip chip--glass">Полировка</span>
+                    <span class="card__arrow arrow-button arrow-button--glass arrow-button--small" aria-hidden="true">
+                      <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+                    </span>
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" data-lightbox-item data-caption="Восстановление фар" data-width="1200" data-height="896" href="assets/img/gallery-03.webp">Восстановление фар</a></h3>
+                    <span class="card__index">03</span>
+                  </div>
+                </article>
+              </li>
+              <li class="gallery__item reveal" data-reveal data-reveal-delay="1" data-slider-item>
+                <article class="gallery__card card">
+                  <div class="card__media media gallery__media">
+                    <img class="card__img media__img" src="assets/img/gallery-04.webp" width="1200" height="896" alt="Химчистка кожаного салона" loading="lazy" decoding="async">
+                    <span class="card__chip chip chip--glass">Салон</span>
+                    <span class="card__arrow arrow-button arrow-button--glass arrow-button--small" aria-hidden="true">
+                      <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+                    </span>
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" data-lightbox-item data-caption="Химчистка кожаного салона" data-width="1200" data-height="896" href="assets/img/gallery-04.webp">Химчистка кожаного салона</a></h3>
+                    <span class="card__index">04</span>
+                  </div>
+                </article>
+              </li>
+              <li class="gallery__item reveal" data-reveal data-slider-item>
+                <article class="gallery__card card">
+                  <div class="card__media media gallery__media">
+                    <img class="card__img media__img" src="assets/img/gallery-05.webp" width="1200" height="896" alt="Керамика на колёсные диски" loading="lazy" decoding="async">
+                    <span class="card__chip chip chip--glass">Керамика</span>
+                    <span class="card__arrow arrow-button arrow-button--glass arrow-button--small" aria-hidden="true">
+                      <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+                    </span>
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" data-lightbox-item data-caption="Керамика на&nbsp;колёсные диски" data-width="1200" data-height="896" href="assets/img/gallery-05.webp">Керамика на&nbsp;колёсные диски</a></h3>
+                    <span class="card__index">05</span>
+                  </div>
+                </article>
+              </li>
+              <li class="gallery__item reveal" data-reveal data-reveal-delay="1" data-slider-item>
+                <article class="gallery__card card">
+                  <div class="card__media media gallery__media">
+                    <img class="card__img media__img" src="assets/img/gallery-06.webp" width="1200" height="896" alt="Комплексный детейлинг" loading="lazy" decoding="async">
+                    <span class="card__chip chip chip--glass">Комплекс</span>
+                    <span class="card__arrow arrow-button arrow-button--glass arrow-button--small" aria-hidden="true">
+                      <svg class="arrow-button__icon arrow-button__icon--diag" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+                    </span>
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" data-lightbox-item data-caption="Комплексный детейлинг" data-width="1200" data-height="896" href="assets/img/gallery-06.webp">Комплексный детейлинг</a></h3>
+                    <span class="card__index">06</span>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <!-- слайдер «до/после» необязательный: без пары фото этот figure можно удалить целиком -->
+          <figure class="gallery__compare compare reveal" data-reveal data-compare>
+            <figcaption class="compare__caption">
+              <div class="compare__head">
+                <h3 class="compare__title">Полировка кузова: до&nbsp;и&nbsp;после</h3>
+                <p class="compare__text">Многоэтапная полировка кузова убирает голограммы, паутинку и&nbsp;мелкие царапины, возвращая лакокрасочному покрытию глубину цвета и&nbsp;зеркальный блеск. Работаем под контролем толщиномера и&nbsp;снимаем минимум лака, а&nbsp;результат закрепляем керамикой или воском&nbsp;— чтобы блеск держался годами.</p>
+              </div>
+              <a class="compare__button button button--accent" data-booking-open data-service-link="Полировка кузова" href="#booking">
+                Записаться на&nbsp;детейлинг
+                <svg class="button__icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </figcaption>
+            <div class="compare__frame media media--8x5" data-compare-frame>
+              <img class="compare__img media__img" src="assets/img/gallery-after.webp" width="1312" height="816" alt="Полировка кузова: после" loading="lazy" decoding="async">
+              <div class="compare__before">
+                <img class="compare__img media__img" src="assets/img/gallery-before.webp" width="1312" height="816" alt="Полировка кузова: до" loading="lazy" decoding="async">
+              </div>
+              <span class="compare__divider" aria-hidden="true">
+                <span class="compare__knob">
+                  <svg class="compare__knob-icon" aria-hidden="true" focusable="false"><use href="#i-arrows-x"/></svg>
+                </span>
+              </span>
+              <span class="compare__chip compare__chip--before chip chip--glass" aria-hidden="true">До</span>
+              <span class="compare__chip compare__chip--after chip chip--glass" aria-hidden="true">После</span>
+              <input class="compare__range" data-compare-range aria-label="Полировка кузова: до и после" type="range" min="0" max="100" step="1" value="50">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" aria-hidden="true"><div class="tread" data-tread><div class="tread__strip" data-tread-strip></div></div></div>
+
+    <!-- преимущества -->
+    <section class="advantages section" id="advantages" aria-labelledby="advantages-title">
+      <div class="container">
+        <div class="advantages__inner">
+          <div class="section__head grid">
+            <div class="section__label">
+              <p class="label reveal" data-reveal>
+                <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+                Почему мы
+              </p>
+            </div>
+            <div class="section__intro">
+              <h2 class="heading heading--h2" id="advantages-title" data-reveal="heading--visible">
+                <span class="heading__line"><span class="heading__text heading__muted reveal reveal--mask">Детейлинг&nbsp;— не&nbsp;дополнительная опция.</span></span>
+                <span class="heading__line heading__line--shift"><span class="heading__text reveal reveal--mask" data-reveal-delay="1">Это наш стандарт.</span></span>
+              </h2>
+            </div>
+          </div>
+
+          <!-- одна сетка: фото + статистика (строка 1), преимущества (строки 2–3) -->
+          <div class="advantages__grid">
+            <div class="advantages__band media reveal" data-reveal>
+              <img class="advantages__band-img media__img" src="assets/img/advantages-bg.webp" width="2400" height="1200" alt="" loading="lazy" decoding="async">
+              <span class="advantages__glow" aria-hidden="true"></span>
+              <span class="advantages__shade" aria-hidden="true"></span>
+            </div>
+
+            <ul class="advantages__stats" data-demo>
+              <li class="advantages__stat reveal" data-reveal>
+                <p class="advantages__value"><span class="advantages__num" data-count="8">8</span><span class="advantages__unit">&nbsp;лет</span></p>
+                <p class="advantages__caption">в&nbsp;детейлинге премиум-класса</p>
+              </li>
+              <li class="advantages__stat reveal" data-reveal data-reveal-delay="1">
+                <p class="advantages__value"><span class="advantages__num" data-count="2500">2&nbsp;500</span><span class="advantages__unit">+</span></p>
+                <p class="advantages__caption">автомобилей прошли через наши боксы</p>
+              </li>
+              <li class="advantages__stat reveal" data-reveal data-reveal-delay="2">
+                <p class="advantages__value"><span class="advantages__unit">до&nbsp;</span><span class="advantages__num" data-count="3">3</span><span class="advantages__unit">&nbsp;лет</span></p>
+                <p class="advantages__caption">гарантия на&nbsp;керамическое покрытие</p>
+              </li>
+              <li class="advantages__stat reveal" data-reveal data-reveal-delay="3">
+                <p class="advantages__value"><span class="advantages__num" data-count="4.9">4,9</span></p>
+                <p class="advantages__caption">рейтинг на&nbsp;Яндекс Картах</p>
+              </li>
+            </ul>
+
+            <ul class="advantages__list">
+              <li class="advantages__cell reveal" data-reveal>
+                <h3 class="advantages__title">Сертифицированные мастера</h3>
+                <p class="advantages__text">Каждый детейлер прошёл обучение у&nbsp;производителей покрытий и&nbsp;плёнок.</p>
+              </li>
+              <li class="advantages__cell reveal" data-reveal data-reveal-delay="1">
+                <h3 class="advantages__title">Профессиональная химия</h3>
+                <p class="advantages__text" data-demo>Работаем с&nbsp;составами Koch Chemie, Gyeon, XPEL&nbsp;— тем&nbsp;же, что используют официальные дилеры.</p>
+              </li>
+              <li class="advantages__cell reveal" data-reveal data-reveal-delay="2">
+                <h3 class="advantages__title">Закрытые чистые боксы</h3>
+                <p class="advantages__text">Контролируемая температура и&nbsp;освещение&nbsp;— без пыли и&nbsp;спешки.</p>
+              </li>
+              <li class="advantages__cell reveal" data-reveal data-reveal-delay="3">
+                <h3 class="advantages__title">Фотоотчёт и&nbsp;гарантия</h3>
+                <p class="advantages__text">Фиксируем состояние до&nbsp;и&nbsp;после, даём письменную гарантию на&nbsp;работы.</p>
+              </li>
+              <li class="advantages__cell reveal" data-reveal>
+                <h3 class="advantages__title">Удобное расположение</h3>
+                <p class="advantages__text" data-demo>В&nbsp;Москва-Сити, 5&nbsp;минут от&nbsp;метро. Пока идёт работа&nbsp;— работайте и&nbsp;вы.</p>
+              </li>
+              <li class="advantages__cell advantages__cell--photo reveal" data-reveal data-reveal-delay="1">
+                <div class="advantages__photo media">
+                  <img class="media__img" src="assets/img/advantages-detail.webp" width="1000" height="1000" alt="" loading="lazy" decoding="async">
+                </div>
+                <p class="advantages__glass glass">Идеальное отражение&nbsp;— наш критерий готовности</p>
+              </li>
+              <li class="advantages__cell reveal" data-reveal data-reveal-delay="2">
+                <h3 class="advantages__title">Деликатное обращение</h3>
+                <p class="advantages__text">Используем защитные чехлы и&nbsp;плёнки на&nbsp;время работ, ключи храним в&nbsp;сейфе.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" aria-hidden="true"><div class="tread" data-tread><div class="tread__strip" data-tread-strip></div></div></div>
+
+    <!-- этапы -->
+    <section class="process section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="process__inner">
+          <div class="section__head grid">
+            <div class="section__label">
+              <p class="label reveal" data-reveal>
+                <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+                Как мы работаем
+              </p>
+            </div>
+            <div class="section__intro">
+              <h2 class="heading heading--h2" id="process-title" data-reveal="heading--visible">
+                <span class="heading__line"><span class="heading__text reveal reveal--mask">Как проходит</span></span>
+                <span class="heading__line heading__line--shift"><span class="heading__text reveal reveal--mask" data-reveal-delay="1">детейлинг автомобиля</span></span>
+              </h2>
+            </div>
+          </div>
+
+          <div class="process__hero media reveal" data-reveal>
+            <img class="process__hero-img media__img" src="assets/img/process-hero.webp" width="2400" height="1000" alt="" loading="lazy" decoding="async">
+            <span class="process__glow" aria-hidden="true"></span>
+            <span class="process__shade" aria-hidden="true"></span>
+          </div>
+
+          <ol class="process__list">
+            <li class="process__step">
+              <span class="process__line reveal reveal--line" data-reveal aria-hidden="true"></span>
+              <span class="process__num reveal" data-reveal data-reveal-delay="2">01</span>
+              <div class="process__body">
+                <h3 class="process__name reveal" data-reveal data-reveal-delay="3">Заявка и&nbsp;консультация</h3>
+                <p class="process__text reveal" data-reveal data-reveal-delay="3">Оставляете заявку&nbsp;— менеджер перезванивает в&nbsp;течение 15&nbsp;минут, уточняет задачу и&nbsp;подбирает удобное время.</p>
+              </div>
+              <div class="process__thumb media media--4x3 reveal" data-reveal data-reveal-delay="4">
+                <img class="media__img" src="assets/img/process-step-01.webp" width="600" height="450" alt="" loading="lazy" decoding="async">
+              </div>
+            </li>
+            <li class="process__step">
+              <span class="process__line reveal reveal--line" data-reveal aria-hidden="true"></span>
+              <span class="process__num reveal" data-reveal data-reveal-delay="2">02</span>
+              <div class="process__body">
+                <h3 class="process__name reveal" data-reveal data-reveal-delay="3">Осмотр и&nbsp;фотофиксация</h3>
+                <p class="process__text reveal" data-reveal data-reveal-delay="3">Осматриваем кузов и&nbsp;салон под специальным светом, фиксируем состояние и&nbsp;согласовываем объём работ и&nbsp;цену.</p>
+              </div>
+              <div class="process__thumb media media--4x3 reveal" data-reveal data-reveal-delay="4">
+                <img class="media__img" src="assets/img/process-step-02.webp" width="600" height="450" alt="" loading="lazy" decoding="async">
+              </div>
+            </li>
+            <li class="process__step">
+              <span class="process__line reveal reveal--line" data-reveal aria-hidden="true"></span>
+              <span class="process__num reveal" data-reveal data-reveal-delay="2">03</span>
+              <div class="process__body">
+                <h3 class="process__name reveal" data-reveal data-reveal-delay="3">Подготовка</h3>
+                <p class="process__text reveal" data-reveal data-reveal-delay="3">Детейлинг-мойка, очистка от&nbsp;битума и&nbsp;металлических вкраплений, обезжиривание.</p>
+              </div>
+              <div class="process__thumb media media--4x3 reveal" data-reveal data-reveal-delay="4">
+                <img class="media__img" src="assets/img/process-step-03.webp" width="600" height="450" alt="" loading="lazy" decoding="async">
+              </div>
+            </li>
+            <li class="process__step">
+              <span class="process__line reveal reveal--line" data-reveal aria-hidden="true"></span>
+              <span class="process__num reveal" data-reveal data-reveal-delay="2">04</span>
+              <div class="process__body">
+                <h3 class="process__name reveal" data-reveal data-reveal-delay="3">Выполнение работ</h3>
+                <p class="process__text reveal" data-reveal data-reveal-delay="3">Полировка, нанесение покрытий или оклейка плёнкой&nbsp;— строго по&nbsp;технологии производителя.</p>
+              </div>
+              <div class="process__thumb media media--4x3 reveal" data-reveal data-reveal-delay="4">
+                <img class="media__img" src="assets/img/process-step-04.webp" width="600" height="450" alt="" loading="lazy" decoding="async">
+              </div>
+            </li>
+            <li class="process__step">
+              <span class="process__line reveal reveal--line" data-reveal aria-hidden="true"></span>
+              <span class="process__num reveal" data-reveal data-reveal-delay="2">05</span>
+              <div class="process__body">
+                <h3 class="process__name reveal" data-reveal data-reveal-delay="3">Контроль и&nbsp;выдача</h3>
+                <p class="process__text reveal" data-reveal data-reveal-delay="3">Проверяем результат под лампами, передаём автомобиль с&nbsp;фотоотчётом, гарантией и&nbsp;рекомендациями по&nbsp;уходу.</p>
+              </div>
+              <div class="process__thumb media media--4x3 reveal" data-reveal data-reveal-delay="4">
+                <img class="media__img" src="assets/img/process-step-05.webp" width="600" height="450" alt="" loading="lazy" decoding="async">
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" aria-hidden="true"><div class="tread" data-tread><div class="tread__strip" data-tread-strip></div></div></div>
+
+    <!-- отзывы -->
+    <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="reviews__inner" data-slider>
+          <div class="section__head grid reviews__head">
+            <div class="section__label">
+              <p class="label reveal" data-reveal>
+                <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+                Отзывы
+              </p>
+            </div>
+            <div class="section__intro reviews__intro">
+              <h2 class="heading heading--h2" id="reviews-title" data-reveal="heading--visible">
+                <span class="heading__line"><span class="heading__text reveal reveal--mask">Отзывы</span></span>
+                <span class="heading__line heading__line--shift"><span class="heading__text reveal reveal--mask" data-reveal-delay="1">клиентов</span></span>
+              </h2>
+            </div>
+            <div class="reviews__controls">
+              <p class="reviews__counter nums" data-slider-counter aria-live="polite">01 / 04</p>
+              <button class="arrow-button arrow-button--outline" data-slider-prev aria-label="Предыдущий отзыв" type="button">
+                <svg class="arrow-button__icon arrow-button__icon--prev" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg>
+              </button>
+              <button class="arrow-button arrow-button--filled" data-slider-next aria-label="Следующий отзыв" type="button">
+                <svg class="arrow-button__icon arrow-button__icon--next" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <ul class="reviews__track" data-slider-track aria-label="Отзывы клиентов">
+            <li class="reviews__item reveal" data-reveal data-slider-item>
+              <figure class="reviews__card card card--text" data-demo>
+                <blockquote class="reviews__quote">
+                  <p class="reviews__text">Отдал машину с&nbsp;голограммами после чужой полировки&nbsp;— забрал как из&nbsp;салона. Отдельно понравился фотоотчёт: видно, что делали на&nbsp;каждом этапе.</p>
+                </blockquote>
+                <figcaption class="reviews__author">
+                  <h3 class="reviews__name">Александр&nbsp;К.</h3>
+                  <p class="reviews__meta">Седан бизнес-класса · Полировка и&nbsp;керамика</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="reviews__item reviews__item--shift reveal" data-reveal data-reveal-delay="1" data-slider-item>
+              <figure class="reviews__card card card--text" data-demo>
+                <blockquote class="reviews__quote">
+                  <p class="reviews__text">Оклеили капот, бампер и&nbsp;фары. Плёнку на&nbsp;кузове вообще не&nbsp;видно, а&nbsp;после зимы&nbsp;— ни&nbsp;одного скола.</p>
+                </blockquote>
+                <figcaption class="reviews__author">
+                  <h3 class="reviews__name">Марина&nbsp;С.</h3>
+                  <p class="reviews__meta">Кроссовер · Плёнка PPF</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="reviews__item reveal" data-reveal data-reveal-delay="2" data-slider-item>
+              <figure class="reviews__card card card--text" data-demo>
+                <blockquote class="reviews__quote">
+                  <p class="reviews__text">Светлая кожа после двух лет выглядела уставшей. Сделали химчистку и&nbsp;защиту&nbsp;— салон как новый, запахов химии нет.</p>
+                </blockquote>
+                <figcaption class="reviews__author">
+                  <h3 class="reviews__name">Дмитрий&nbsp;В.</h3>
+                  <p class="reviews__meta">Купе · Химчистка салона</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="reviews__item reviews__item--shift reveal" data-reveal data-reveal-delay="3" data-slider-item>
+              <figure class="reviews__card card card--text" data-demo>
+                <blockquote class="reviews__quote">
+                  <p class="reviews__text">Удобно, что студия рядом с&nbsp;офисом: оставила утром, вечером забрала. Всё чётко по&nbsp;времени и&nbsp;по&nbsp;цене, которую назвали на&nbsp;осмотре.</p>
+                </blockquote>
+                <figcaption class="reviews__author">
+                  <h3 class="reviews__name">Екатерина&nbsp;Л.</h3>
+                  <p class="reviews__meta">Внедорожник · Комплексный детейлинг</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" aria-hidden="true"><div class="tread" data-tread><div class="tread__strip" data-tread-strip></div></div></div>
+
+    <!-- faq -->
+    <section class="faq section" id="faq" data-faq aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq__inner">
+          <div class="section__head grid">
+            <div class="section__label">
+              <p class="label reveal" data-reveal>
+                <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+                Вопросы
+              </p>
+            </div>
+            <div class="section__intro">
+              <h2 class="heading heading--h2" id="faq-title" data-reveal="heading--visible">
+                <span class="heading__line"><span class="heading__text reveal reveal--mask">Частые вопросы</span></span>
+                <span class="heading__line heading__line--shift"><span class="heading__text reveal reveal--mask" data-reveal-delay="1">о&nbsp;детейлинге</span></span>
+              </h2>
+            </div>
+          </div>
+
+          <div class="faq__list">
+            <div class="faq__item reveal" data-reveal data-faq-item>
+              <h3 class="faq__question"><button class="faq__trigger" id="faq-q-1" data-faq-trigger aria-expanded="true" aria-controls="faq-a-1" type="button">Сколько стоит детейлинг автомобиля в&nbsp;Москве?</button></h3>
+              <div class="faq__panel" id="faq-a-1" aria-labelledby="faq-q-1" role="region">
+                <div class="faq__panel-inner">
+                  <p class="faq__answer" data-demo>Стоимость зависит от&nbsp;услуги, класса и&nbsp;состояния автомобиля: детейлинг-мойка&nbsp;— от&nbsp;4&nbsp;500&nbsp;₽, полировка кузова&nbsp;— от&nbsp;25&nbsp;000&nbsp;₽, керамическое покрытие&nbsp;— от&nbsp;35&nbsp;000&nbsp;₽. Точную цену называем после бесплатного осмотра.</p>
+                </div>
+              </div>
+              <span class="faq__index nums" aria-hidden="true">[01]</span>
+              <svg class="faq__icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+            </div>
+            <div class="faq__item reveal" data-reveal data-faq-item>
+              <h3 class="faq__question"><button class="faq__trigger" id="faq-q-2" data-faq-trigger aria-expanded="true" aria-controls="faq-a-2" type="button">Сколько времени занимает работа?</button></h3>
+              <div class="faq__panel" id="faq-a-2" aria-labelledby="faq-q-2" role="region">
+                <div class="faq__panel-inner">
+                  <p class="faq__answer">Детейлинг-мойка&nbsp;— 2–3&nbsp;часа, полировка&nbsp;— 1–2&nbsp;дня, керамика&nbsp;— 2–3&nbsp;дня с&nbsp;учётом полимеризации, оклейка плёнкой&nbsp;— от&nbsp;2 до&nbsp;5&nbsp;дней.</p>
+                </div>
+              </div>
+              <span class="faq__index nums" aria-hidden="true">[02]</span>
+              <svg class="faq__icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+            </div>
+            <div class="faq__item reveal" data-reveal data-faq-item>
+              <h3 class="faq__question"><button class="faq__trigger" id="faq-q-3" data-faq-trigger aria-expanded="true" aria-controls="faq-a-3" type="button">Чем керамика отличается от&nbsp;полироли?</button></h3>
+              <div class="faq__panel" id="faq-a-3" aria-labelledby="faq-q-3" role="region">
+                <div class="faq__panel-inner">
+                  <p class="faq__answer">Полироль держится несколько недель. Керамическое покрытие образует твёрдый защитный слой, который сохраняет блеск и&nbsp;гидрофобный эффект до&nbsp;3&nbsp;лет.</p>
+                </div>
+              </div>
+              <span class="faq__index nums" aria-hidden="true">[03]</span>
+              <svg class="faq__icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+            </div>
+            <div class="faq__item reveal" data-reveal data-faq-item>
+              <h3 class="faq__question"><button class="faq__trigger" id="faq-q-4" data-faq-trigger aria-expanded="true" aria-controls="faq-a-4" type="button">Нужно ли полировать кузов перед керамикой?</button></h3>
+              <div class="faq__panel" id="faq-a-4" aria-labelledby="faq-q-4" role="region">
+                <div class="faq__panel-inner">
+                  <p class="faq__answer">Да. Керамика «запечатывает» то, что под ней, поэтому перед нанесением мы убираем царапины и&nbsp;голограммы&nbsp;— иначе дефекты останутся под покрытием.</p>
+                </div>
+              </div>
+              <span class="faq__index nums" aria-hidden="true">[04]</span>
+              <svg class="faq__icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+            </div>
+            <div class="faq__item reveal" data-reveal data-faq-item>
+              <h3 class="faq__question"><button class="faq__trigger" id="faq-q-5" data-faq-trigger aria-expanded="true" aria-controls="faq-a-5" type="button">Какая плёнка лучше для защиты кузова?</button></h3>
+              <div class="faq__panel" id="faq-a-5" aria-labelledby="faq-q-5" role="region">
+                <div class="faq__panel-inner">
+                  <p class="faq__answer">Мы используем полиуретановую антигравийную плёнку PPF: она эластичная, самовосстанавливается от&nbsp;мелких царапин и&nbsp;не&nbsp;желтеет. Подбираем под задачу и&nbsp;бюджет.</p>
+                </div>
+              </div>
+              <span class="faq__index nums" aria-hidden="true">[05]</span>
+              <svg class="faq__icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+            </div>
+            <div class="faq__item reveal" data-reveal data-faq-item>
+              <h3 class="faq__question"><button class="faq__trigger" id="faq-q-6" data-faq-trigger aria-expanded="true" aria-controls="faq-a-6" type="button">Даёте ли вы гарантию?</button></h3>
+              <div class="faq__panel" id="faq-a-6" aria-labelledby="faq-q-6" role="region">
+                <div class="faq__panel-inner">
+                  <p class="faq__answer">Да, на&nbsp;все работы выдаём письменную гарантию. На&nbsp;керамическое покрытие&nbsp;— до&nbsp;3&nbsp;лет, на&nbsp;плёнку&nbsp;— по&nbsp;условиям производителя.</p>
+                </div>
+              </div>
+              <span class="faq__index nums" aria-hidden="true">[06]</span>
+              <svg class="faq__icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+            </div>
+            <div class="faq__item reveal" data-reveal data-faq-item>
+              <h3 class="faq__question"><button class="faq__trigger" id="faq-q-7" data-faq-trigger aria-expanded="true" aria-controls="faq-a-7" type="button">Можно ли оставить автомобиль на&nbsp;весь день?</button></h3>
+              <div class="faq__panel" id="faq-a-7" aria-labelledby="faq-q-7" role="region">
+                <div class="faq__panel-inner">
+                  <p class="faq__answer">Да. Боксы закрытые и&nbsp;охраняемые, ключи хранятся в&nbsp;сейфе. Можно оставить машину утром и&nbsp;забрать вечером.</p>
+                </div>
+              </div>
+              <span class="faq__index nums" aria-hidden="true">[07]</span>
+              <svg class="faq__icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" aria-hidden="true"><div class="tread" data-tread><div class="tread__strip" data-tread-strip></div></div></div>
+
+    <!-- запись -->
+    <section class="booking section" id="booking" aria-labelledby="booking-title">
+      <div class="container">
+        <div class="booking__inner">
+          <div class="booking__grid grid">
+            <div class="booking__photo media reveal" data-reveal>
+              <img class="booking__img media__img" src="assets/img/booking.webp" width="1200" height="1500" alt="" loading="lazy" decoding="async">
+            </div>
+
+            <div class="booking__card card card--text reveal" data-reveal data-reveal-delay="1">
+              <p class="booking__label label">
+                <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+                Онлайн-заявка
+              </p>
+              <h2 class="booking__title heading heading--h2 heading--compact" id="booking-title">
+                <span class="heading__line"><span class="heading__text">Запишитесь</span></span>
+                <span class="heading__line heading__line--shift"><span class="heading__text">на&nbsp;детейлинг</span></span>
+              </h2>
+              <p class="booking__text">Оставьте заявку&nbsp;— перезвоним в&nbsp;течение 15&nbsp;минут, ответим на&nbsp;вопросы и&nbsp;подберём удобное время.</p>
+
+              <form class="booking__form form" data-form="booking" action="" method="POST" novalidate>
+                <div class="form__fields">
+                  <div class="form__grid">
+                    <div class="form__field" data-field>
+                      <label class="form__label" for="booking-name">Имя*</label>
+                      <input class="form__input" id="booking-name" data-validate="name" aria-describedby="booking-name-error" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required minlength="2">
+                      <p class="form__error" id="booking-name-error" data-field-error></p>
+                    </div>
+                    <div class="form__field" data-field>
+                      <label class="form__label" for="booking-phone">Телефон*</label>
+                      <input class="form__input nums" id="booking-phone" data-validate="phone" data-phone aria-describedby="booking-phone-error" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+                      <p class="form__error" id="booking-phone-error" data-field-error></p>
+                    </div>
+                    <div class="form__field" data-field>
+                      <label class="form__label" for="booking-car">Марка и&nbsp;модель</label>
+                      <input class="form__input" id="booking-car" name="car" type="text" autocomplete="off" placeholder="Например, BMW X5">
+                    </div>
+                    <div class="form__field" data-field>
+                      <label class="form__label" for="booking-service">Услуга</label>
+                      <select class="form__input form__input--select" id="booking-service" data-service-select name="service">
+                        <option value="">Выберите услугу</option>
+                        <option value="Детейлинг-мойка">Детейлинг-мойка</option>
+                        <option value="Полировка кузова">Полировка кузова</option>
+                        <option value="Керамическое покрытие">Керамическое покрытие</option>
+                        <option value="Оклейка плёнкой PPF">Оклейка плёнкой PPF</option>
+                        <option value="Химчистка салона">Химчистка салона</option>
+                        <option value="Антидождь">Антидождь</option>
+                        <option value="Комплексный детейлинг">Комплексный детейлинг</option>
+                        <option value="Нужна консультация">Нужна консультация</option>
+                      </select>
+                    </div>
+                    <div class="form__field form__field--full" data-field>
+                      <label class="form__label" for="booking-comment">Комментарий</label>
+                      <textarea class="form__input form__input--textarea" id="booking-comment" name="comment" rows="4" placeholder="Опишите задачу или состояние автомобиля"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form__field form__field--check" data-field>
+                    <label class="form__check" for="booking-consent">
+                      <input class="form__checkbox" id="booking-consent" data-validate="consent" aria-describedby="booking-consent-error" name="consent" type="checkbox" value="yes" required>
+                      <span class="form__check-text">Я согласен(на) на&nbsp;обработку персональных данных и&nbsp;принимаю <a class="form__link" href="#">политику конфиденциальности</a></span>
+                    </label>
+                    <p class="form__error" id="booking-consent-error" data-field-error></p>
+                  </div>
+
+                  <!-- служебные поля: UTM-метки, адрес страницы, ловушка для ботов -->
+                  <input data-utm type="hidden" name="utm_source">
+                  <input data-utm type="hidden" name="utm_medium">
+                  <input data-utm type="hidden" name="utm_campaign">
+                  <input data-utm type="hidden" name="utm_content">
+                  <input data-utm type="hidden" name="utm_term">
+                  <input data-page-url type="hidden" name="page_url">
+                  <div class="form__trap visually-hidden" aria-hidden="true">
+                    <label class="form__trap-label" for="booking-website">Website</label>
+                    <input class="form__trap-input" id="booking-website" data-honeypot name="website" type="text" tabindex="-1" autocomplete="off">
+                  </div>
+
+                  <div class="form__actions">
+                    <button class="form__submit button button--accent" data-form-submit type="submit">
+                      <span class="button__label" data-form-submit-label>Отправить заявку</span>
+                      <svg class="button__icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+                    </button>
+                    <p class="form__note">*&nbsp;— обязательные поля</p>
+                  </div>
+
+                  <p class="form__alert" data-form-alert>Не удалось отправить. Попробуйте ещё раз или позвоните нам: <a class="form__link" data-demo href="tel:+74950000000">+7&nbsp;(495)&nbsp;000-00-00</a></p>
+                </div>
+
+                <div class="form__success">
+                  <h3 class="form__success-title" data-form-success-title tabindex="-1">Заявка отправлена</h3>
+                  <p class="form__success-text" data-form-success-text>Перезвоним в&nbsp;течение 15&nbsp;минут.</p>
+                  <button class="form__again button button--ghost" data-form-reset type="button">Отправить ещё одну</button>
+                </div>
+
+                <p class="visually-hidden" data-form-status aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- контакты -->
+    <section class="contacts section" id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <div class="contacts__inner">
+          <h2 class="visually-hidden" id="contacts-title">Контакты</h2>
+          <div class="contacts__map card reveal" data-reveal data-demo>
+            <span class="contacts__grid-lines" aria-hidden="true"></span>
+            <span class="contacts__glow" aria-hidden="true"></span>
+            <span class="contacts__marker" aria-hidden="true"></span>
+            <div class="contacts__map-info">
+              <p class="contacts__map-address">г.&nbsp;Москва, ул.&nbsp;Демонстрационная, 1, стр.&nbsp;2</p>
+              <a class="button button--ghost" data-demo href="#">
+                Построить маршрут
+                <svg class="button__icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <ul class="contacts__list">
+            <li class="contacts__cell reveal" data-reveal>
+              <p class="contacts__label">Адрес</p>
+              <p class="contacts__value" data-demo>г.&nbsp;Москва, ул.&nbsp;Демонстрационная, 1, стр.&nbsp;2</p>
+              <p class="contacts__meta" data-demo>м.&nbsp;«Деловой центр», «Выставочная»</p>
+            </li>
+            <li class="contacts__cell reveal" data-reveal data-reveal-delay="1">
+              <p class="contacts__label">Телефон / e-mail</p>
+              <a class="contacts__value contacts__link nums" data-demo href="tel:+74950000000">+7&nbsp;(495)&nbsp;000-00-00</a>
+              <a class="contacts__meta contacts__link" data-demo href="mailto:info@detailpro.example">info@detailpro.example</a>
+            </li>
+            <li class="contacts__cell reveal" data-reveal data-reveal-delay="2">
+              <p class="contacts__label">Режим работы</p>
+              <p class="contacts__value nums" data-demo>Ежедневно, 9:00–21:00</p>
+            </li>
+            <li class="contacts__cell reveal" data-reveal data-reveal-delay="3">
+              <p class="contacts__label">Мессенджеры</p>
+              <p class="contacts__value contacts__messengers">
+                <a class="contacts__link" data-demo href="#">Telegram</a>
+                <span class="contacts__dot" aria-hidden="true">·</span>
+                <a class="contacts__link" data-demo href="#">Max</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__cols grid">
+          <div class="footer__col footer__col--cta">
+            <p class="footer__title">Запись</p>
+            <a class="footer__cta-phone nums" data-demo href="tel:+74950000000">+7&nbsp;(495)&nbsp;000-00-00</a>
+            <a class="footer__cta-button button button--accent" data-booking-open href="#booking">
+              Записаться
+              <svg class="button__icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ne"/></svg>
+            </a>
+          </div>
+          <nav class="footer__col footer__col--nav" aria-labelledby="footer-nav-title">
+            <p class="footer__title" id="footer-nav-title">Навигация</p>
+            <ul class="footer__list footer__list--split">
+              <li class="footer__item"><a class="footer__link" href="#services">Услуги</a></li>
+              <li class="footer__item"><a class="footer__link" href="#works">Работы</a></li>
+              <li class="footer__item"><a class="footer__link" href="#advantages">Преимущества</a></li>
+              <li class="footer__item"><a class="footer__link" href="#process">Этапы</a></li>
+              <li class="footer__item"><a class="footer__link" href="#reviews">Отзывы</a></li>
+              <li class="footer__item"><a class="footer__link" href="#faq">FAQ</a></li>
+              <li class="footer__item"><a class="footer__link" href="#contacts">Контакты</a></li>
+            </ul>
+          </nav>
+          <nav class="footer__col footer__col--services" aria-labelledby="footer-services-title">
+            <p class="footer__title" id="footer-services-title">Услуги</p>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#service-wash">Детейлинг-мойка</a></li>
+              <li class="footer__item"><a class="footer__link" href="#service-polish">Полировка кузова</a></li>
+              <li class="footer__item"><a class="footer__link" href="#service-ceramic">Керамическое покрытие</a></li>
+              <li class="footer__item"><a class="footer__link" href="#service-ppf">Оклейка плёнкой PPF</a></li>
+              <li class="footer__item"><a class="footer__link" href="#service-interior">Химчистка салона</a></li>
+              <li class="footer__item"><a class="footer__link" href="#service-glass">Антидождь и&nbsp;защита стёкол</a></li>
+            </ul>
+          </nav>
+          <div class="footer__col footer__col--contacts">
+            <p class="footer__title">Контакты</p>
+            <ul class="footer__list">
+              <li class="footer__item footer__text" data-demo>г.&nbsp;Москва, ул.&nbsp;Демонстрационная, 1, стр.&nbsp;2</li>
+              <li class="footer__item"><a class="footer__link nums" data-demo href="tel:+74950000000">+7&nbsp;(495)&nbsp;000-00-00</a></li>
+              <li class="footer__item"><a class="footer__link" data-demo href="mailto:info@detailpro.example">info@detailpro.example</a></li>
+              <li class="footer__item footer__text nums" data-demo>Ежедневно, 9:00–21:00</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copy">©&nbsp;2026 DETAILPRO. Детейлинг-студия в&nbsp;Москве</p>
+          <a class="footer__policy" href="#">Политика конфиденциальности</a>
+          <p class="footer__legal" data-demo>ООО «Детейлпро», ИНН&nbsp;0000000000</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" aria-hidden="true">
+      <div class="footer__mark">
+        <p class="footer__wordmark">DETAILPRO</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- лайтбокс -->
+  <dialog class="lightbox" data-lightbox aria-label="Просмотр работ">
+    <div class="lightbox__inner" data-lightbox-backdrop>
+      <figure class="lightbox__figure">
+        <div class="lightbox__frame">
+          <img class="lightbox__img" data-lightbox-img src="assets/img/gallery-01.webp" width="1200" height="896" alt="" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="lightbox__caption">
+          <span class="lightbox__text" data-lightbox-caption></span>
+          <span class="lightbox__counter nums" data-lightbox-counter aria-live="polite">01 / 06</span>
+        </figcaption>
+      </figure>
+      <button class="lightbox__close arrow-button arrow-button--outline arrow-button--close" data-lightbox-close aria-label="Закрыть" type="button">
+        <svg class="arrow-button__icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      </button>
+      <button class="lightbox__prev arrow-button arrow-button--outline" data-lightbox-prev aria-label="Предыдущее фото" type="button">
+        <svg class="arrow-button__icon arrow-button__icon--prev" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg>
+      </button>
+      <button class="lightbox__next arrow-button arrow-button--filled" data-lightbox-next aria-label="Следующее фото" type="button">
+        <svg class="arrow-button__icon arrow-button__icon--next" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- попап записи: форма клонируется сюда из секции #booking (form.js) -->
+  <dialog class="modal" data-modal aria-labelledby="modal-title">
+    <div class="modal__box">
+      <button class="modal__close arrow-button arrow-button--outline arrow-button--close" data-modal-close aria-label="Закрыть окно записи" type="button">
+        <svg class="arrow-button__icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      </button>
+      <p class="modal__label label">
+        <svg class="label__icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg>
+        Онлайн-заявка
+      </p>
+      <h2 class="modal__title" id="modal-title" data-modal-title>Запишитесь на&nbsp;детейлинг</h2>
+      <p class="modal__text">Оставьте заявку&nbsp;— перезвоним в&nbsp;течение 15&nbsp;минут, ответим на&nbsp;вопросы и&nbsp;подберём удобное время.</p>
+      <div class="modal__form" data-modal-form></div>
+    </div>
+  </dialog>
+
+</body>
+</html>
